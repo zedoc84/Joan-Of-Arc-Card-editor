@@ -1,0 +1,1797 @@
+{
+ "unite": {
+  "file": "Unite_Edit.psd",
+  "w": 515,
+  "h": 737,
+  "layers": [
+   {
+    "name": "Image/Picture ICI / HERE",
+    "type": "pixel",
+    "visible": true
+   },
+   {
+    "name": "FRONT / DEVANT",
+    "type": "pixel",
+    "visible": true,
+    "file": "front-devant.png",
+    "x": -1,
+    "y": -6,
+    "w": 516,
+    "h": 743
+   },
+   {
+    "name": "NOM / NAME",
+    "type": "type",
+    "visible": true,
+    "text": "Nom - Name",
+    "file": "nom-name.png",
+    "x": 157,
+    "y": 38,
+    "w": 196,
+    "h": 33
+   },
+   {
+    "name": "SKILL / TRAIT",
+    "type": "group",
+    "visible": false,
+    "children": [
+     {
+      "name": "Back for Skill / Fond",
+      "type": "pixel",
+      "visible": true,
+      "file": "skill-trait-back-for-skill-fond.png",
+      "x": -24,
+      "y": 500,
+      "w": 564,
+      "h": 85
+     },
+     {
+      "name": "Skill",
+      "type": "type",
+      "visible": true,
+      "text": "Skill here",
+      "file": "skill-trait-skill.png",
+      "x": 202,
+      "y": 512,
+      "w": 118,
+      "h": 26
+     }
+    ]
+   },
+   {
+    "name": "Pouvoir / Power",
+    "type": "group",
+    "visible": false,
+    "children": [
+     {
+      "name": "Cartes",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Carte Round / Tour",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-cartes-carte-round-tour.png",
+        "x": 225,
+        "y": 591,
+        "w": 63,
+        "h": 91
+       },
+       {
+        "name": "Carte Council / Conseil",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-cartes-carte-council-conseil.png",
+        "x": 227,
+        "y": 592,
+        "w": 62,
+        "h": 88
+       },
+       {
+        "name": "Carte Mythe / Tactic",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-cartes-carte-mythe-tactic.png",
+        "x": 226,
+        "y": 591,
+        "w": 63,
+        "h": 91
+       }
+      ]
+     },
+     {
+      "name": "Dés 3D / 3D Dice",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Noir",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-des-3d-3d-dice-noir.png",
+        "x": 330,
+        "y": 618,
+        "w": 56,
+        "h": 58
+       },
+       {
+        "name": "Blanc",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoir-power-des-3d-3d-dice-blanc.png",
+        "x": 331,
+        "y": 619,
+        "w": 54,
+        "h": 56
+       },
+       {
+        "name": "Rouge",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoir-power-des-3d-3d-dice-rouge.png",
+        "x": 330,
+        "y": 619,
+        "w": 56,
+        "h": 58
+       },
+       {
+        "name": "Jaune",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoir-power-des-3d-3d-dice-jaune.png",
+        "x": 330,
+        "y": 619,
+        "w": 56,
+        "h": 58
+       }
+      ]
+     },
+     {
+      "name": "Tokens",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Myth token",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoir-power-tokens-myth-token.png",
+        "x": 136,
+        "y": 600,
+        "w": 85,
+        "h": 89
+       },
+       {
+        "name": "XP token",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoir-power-tokens-xp-token.png",
+        "x": 282,
+        "y": 593,
+        "w": 100,
+        "h": 85
+       }
+      ]
+     },
+     {
+      "name": "Faces Red/Rouge",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Kill",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-red-rouge-kill.png",
+        "x": 150,
+        "y": 608,
+        "w": 59,
+        "h": 59
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-red-rouge-disrupt.png",
+        "x": 207,
+        "y": 609,
+        "w": 60,
+        "h": 58
+       },
+       {
+        "name": "Push",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-red-rouge-push.png",
+        "x": 264,
+        "y": 607,
+        "w": 60,
+        "h": 60
+       },
+       {
+        "name": "Calque 13",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-red-rouge-calque-13.png",
+        "x": 322,
+        "y": 607,
+        "w": 59,
+        "h": 59
+       }
+      ]
+     },
+     {
+      "name": "Face Black/Noir",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Kill",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-face-black-noir-kill.png",
+        "x": 162,
+        "y": 627,
+        "w": 58,
+        "h": 58
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-face-black-noir-disrupt.png",
+        "x": 219,
+        "y": 626,
+        "w": 59,
+        "h": 59
+       },
+       {
+        "name": "Shield/Bouclier",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-face-black-noir-shield-bouclier.png",
+        "x": 278,
+        "y": 625,
+        "w": 58,
+        "h": 59
+       }
+      ]
+     },
+     {
+      "name": "Faces White / Blanc",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Blank White / Blanc vierge",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-white-blanc-blank-white-blanc-vierge.png",
+        "x": 156,
+        "y": 599,
+        "w": 59,
+        "h": 59
+       },
+       {
+        "name": "Disrupt White / disrupt Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-white-blanc-disrupt-white-disrupt-blanc.png",
+        "x": 214,
+        "y": 599,
+        "w": 60,
+        "h": 60
+       },
+       {
+        "name": "Push White / Push Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-white-blanc-push-white-push-blanc.png",
+        "x": 273,
+        "y": 599,
+        "w": 62,
+        "h": 62
+       },
+       {
+        "name": "Shield White / Bouclier Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-faces-white-blanc-shield-white-bouclier-blanc.png",
+        "x": 334,
+        "y": 600,
+        "w": 63,
+        "h": 63
+       }
+      ]
+     },
+     {
+      "name": "Face Yellow / Jaune",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Blank / vierge",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-face-yellow-jaune-blank-vierge.png",
+        "x": 151,
+        "y": 607,
+        "w": 60,
+        "h": 59
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-face-yellow-jaune-disrupt.png",
+        "x": 210,
+        "y": 607,
+        "w": 60,
+        "h": 60
+       },
+       {
+        "name": "Calque 11",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-face-yellow-jaune-calque-11.png",
+        "x": 271,
+        "y": 607,
+        "w": 61,
+        "h": 61
+       },
+       {
+        "name": "Calque 12",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-face-yellow-jaune-calque-12.png",
+        "x": 333,
+        "y": 609,
+        "w": 58,
+        "h": 58
+       }
+      ]
+     },
+     {
+      "name": "Dice symbol / symbole dé",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "Shield",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-dice-symbol-symbole-de-shield.png",
+        "x": 164,
+        "y": 611,
+        "w": 36,
+        "h": 52
+       },
+       {
+        "name": "push",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-dice-symbol-symbole-de-push.png",
+        "x": 358,
+        "y": 603,
+        "w": 47,
+        "h": 50
+       },
+       {
+        "name": "Kill",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-dice-symbol-symbole-de-kill.png",
+        "x": 154,
+        "y": 611,
+        "w": 59,
+        "h": 42
+       },
+       {
+        "name": "Tramp",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-dice-symbol-symbole-de-tramp.png",
+        "x": 302,
+        "y": 605,
+        "w": 41,
+        "h": 46
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoir-power-dice-symbol-symbole-de-disrupt.png",
+        "x": 362,
+        "y": 603,
+        "w": 35,
+        "h": 58
+       }
+      ]
+     },
+     {
+      "name": "Text 1 ",
+      "type": "type",
+      "visible": true,
+      "text": "Text 1 ",
+      "file": "pouvoir-power-text-1.png",
+      "x": 148,
+      "y": 568,
+      "w": 68,
+      "h": 26
+     },
+     {
+      "name": "Fleche / Arrow",
+      "type": "pixel",
+      "visible": true,
+      "file": "pouvoir-power-fleche-arrow.png",
+      "x": 212,
+      "y": 611,
+      "w": 130,
+      "h": 84
+     },
+     {
+      "name": "Text 2",
+      "type": "type",
+      "visible": true,
+      "text": "Text2",
+      "file": "pouvoir-power-text-2.png",
+      "x": 84,
+      "y": 644,
+      "w": 56,
+      "h": 22
+     }
+    ]
+   },
+   {
+    "name": "Defense ",
+    "type": "group",
+    "visible": false,
+    "children": [
+     {
+      "name": "Support Dé / Dice",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "back 3dés/3dices",
+        "type": "pixel",
+        "visible": true,
+        "file": "defense-support-de-dice-back-3des-3dices.png",
+        "x": 415,
+        "y": 453,
+        "w": 93,
+        "h": 260
+       },
+       {
+        "name": "back 2 dés/2dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-support-de-dice-back-2-des-2dice.png",
+        "x": 409,
+        "y": 442,
+        "w": 103,
+        "h": 202
+       },
+       {
+        "name": "Back 1 dé/1dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-support-de-dice-back-1-de-1dice.png",
+        "x": 415,
+        "y": 444,
+        "w": 92,
+        "h": 134
+       }
+      ]
+     },
+     {
+      "name": "Dés",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "Noir",
+        "type": "pixel",
+        "visible": true,
+        "file": "defense-des-noir.png",
+        "x": 439,
+        "y": 483,
+        "w": 41,
+        "h": 43
+       },
+       {
+        "name": "Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "defense-des-blanc.png",
+        "x": 440,
+        "y": 484,
+        "w": 39,
+        "h": 41
+       },
+       {
+        "name": "Rouge",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-des-rouge.png",
+        "x": 439,
+        "y": 484,
+        "w": 41,
+        "h": 43
+       },
+       {
+        "name": "Jaune",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-des-jaune.png",
+        "x": 439,
+        "y": 484,
+        "w": 41,
+        "h": 43
+       }
+      ]
+     },
+     {
+      "name": "Calque 7",
+      "type": "pixel",
+      "visible": true,
+      "file": "defense-calque-7.png",
+      "x": 384,
+      "y": 359,
+      "w": 100,
+      "h": 108
+     }
+    ]
+   },
+   {
+    "name": "Attaque/Attack",
+    "type": "group",
+    "visible": false,
+    "children": [
+     {
+      "name": "Support Dé/Dice",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "back 3dés/3dices",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-attack-support-de-dice-back-3des-3dices.png",
+        "x": 13,
+        "y": 448,
+        "w": 96,
+        "h": 270
+       },
+       {
+        "name": "back 2 dés/2dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-attack-support-de-dice-back-2-des-2dice.png",
+        "x": 7,
+        "y": 453,
+        "w": 99,
+        "h": 195
+       },
+       {
+        "name": "Back 1 dé/1dice",
+        "type": "pixel",
+        "visible": true,
+        "file": "attaque-attack-support-de-dice-back-1-de-1dice.png",
+        "x": 19,
+        "y": 454,
+        "w": 80,
+        "h": 127
+       }
+      ]
+     },
+     {
+      "name": "Dés ",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Noir",
+        "type": "pixel",
+        "visible": true,
+        "file": "attaque-attack-des-noir.png",
+        "x": 37,
+        "y": 487,
+        "w": 41,
+        "h": 43
+       },
+       {
+        "name": "Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "attaque-attack-des-blanc.png",
+        "x": 38,
+        "y": 488,
+        "w": 39,
+        "h": 41
+       },
+       {
+        "name": "Rouge",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-attack-des-rouge.png",
+        "x": 37,
+        "y": 488,
+        "w": 41,
+        "h": 43
+       },
+       {
+        "name": "Jaune",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-attack-des-jaune.png",
+        "x": 37,
+        "y": 488,
+        "w": 41,
+        "h": 43
+       }
+      ]
+     },
+     {
+      "name": "Mêlée",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Mêlée",
+        "type": "pixel",
+        "visible": true,
+        "file": "attaque-attack-melee-melee.png",
+        "x": 30,
+        "y": 361,
+        "w": 101,
+        "h": 109
+       }
+      ]
+     },
+     {
+      "name": "Shots",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "Direct Shot",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-attack-shots-direct-shot.png",
+        "x": 27,
+        "y": 338,
+        "w": 107,
+        "h": 141
+       },
+       {
+        "name": "Arcing Shot",
+        "type": "pixel",
+        "visible": true,
+        "file": "attaque-attack-shots-arcing-shot.png",
+        "x": 1,
+        "y": 319,
+        "w": 156,
+        "h": 172
+       },
+       {
+        "name": "range shot",
+        "type": "type",
+        "visible": true,
+        "text": "2",
+        "file": "attaque-attack-shots-range-shot.png",
+        "x": 74,
+        "y": 349,
+        "w": 13,
+        "h": 26
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Factions",
+    "type": "group",
+    "visible": false,
+    "children": [
+     {
+      "name": "UnHoly / Impie",
+      "type": "pixel",
+      "visible": false,
+      "file": "factions-unholy-impie.png",
+      "x": 8,
+      "y": 23,
+      "w": 112,
+      "h": 126
+     },
+     {
+      "name": "English / Anglais",
+      "type": "pixel",
+      "visible": false,
+      "file": "factions-english-anglais.png",
+      "x": 8,
+      "y": 23,
+      "w": 116,
+      "h": 130
+     },
+     {
+      "name": "Holy / Saint",
+      "type": "pixel",
+      "visible": false,
+      "file": "factions-holy-saint.png",
+      "x": 8,
+      "y": 24,
+      "w": 116,
+      "h": 130
+     },
+     {
+      "name": "Ottoman",
+      "type": "pixel",
+      "visible": false,
+      "file": "factions-ottoman.png",
+      "x": 9,
+      "y": 25,
+      "w": 116,
+      "h": 130
+     },
+     {
+      "name": "Neutre/Neutral",
+      "type": "pixel",
+      "visible": false,
+      "file": "factions-neutre-neutral.png",
+      "x": 9,
+      "y": 25,
+      "w": 117,
+      "h": 130
+     },
+     {
+      "name": "FRench/Français",
+      "type": "pixel",
+      "visible": true,
+      "file": "factions-french-francais.png",
+      "x": 8,
+      "y": 23,
+      "w": 113,
+      "h": 126
+     }
+    ]
+   },
+   {
+    "name": "Unit Type",
+    "type": "group",
+    "visible": false,
+    "children": [
+     {
+      "name": "Machine",
+      "type": "pixel",
+      "visible": false,
+      "file": "unit-type-machine.png",
+      "x": 392,
+      "y": 21,
+      "w": 107,
+      "h": 107
+     },
+     {
+      "name": "Volant",
+      "type": "pixel",
+      "visible": false,
+      "file": "unit-type-volant.png",
+      "x": 392,
+      "y": 21,
+      "w": 107,
+      "h": 107
+     },
+     {
+      "name": "Cavalerie",
+      "type": "pixel",
+      "visible": false,
+      "file": "unit-type-cavalerie.png",
+      "x": 392,
+      "y": 19,
+      "w": 108,
+      "h": 108
+     },
+     {
+      "name": "Infanterie",
+      "type": "pixel",
+      "visible": true,
+      "file": "unit-type-infanterie.png",
+      "x": 392,
+      "y": 18,
+      "w": 108,
+      "h": 108
+     }
+    ]
+   }
+  ]
+ },
+ "tarot": {
+  "file": "tarotEdit.psd",
+  "w": 827,
+  "h": 1419,
+  "layers": [
+   {
+    "name": "Your PIC / Votre Image",
+    "type": "pixel",
+    "visible": true
+   },
+   {
+    "name": "Calque 6",
+    "type": "pixel",
+    "visible": true,
+    "file": "calque-6.png",
+    "x": -57,
+    "y": -58,
+    "w": 945,
+    "h": 1535
+   },
+   {
+    "name": "Nom - Name",
+    "type": "type",
+    "visible": true,
+    "text": "Nom - Name",
+    "file": "nom-name.png",
+    "x": 247,
+    "y": 58,
+    "w": 336,
+    "h": 57
+   },
+   {
+    "name": "DEFENSE",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "Support Dés / Dice copie 2",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "support 5 dés / dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-support-des-dice-copie-2-support-5-des-dice.png",
+        "x": 685,
+        "y": 806,
+        "w": 137,
+        "h": 534
+       },
+       {
+        "name": "support 4 dés/dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-support-des-dice-copie-2-support-4-des-dice.png",
+        "x": 685,
+        "y": 806,
+        "w": 137,
+        "h": 437
+       },
+       {
+        "name": "support 3 dés / Dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-support-des-dice-copie-2-support-3-des-dice.png",
+        "x": 685,
+        "y": 806,
+        "w": 137,
+        "h": 343
+       },
+       {
+        "name": "support 2 dés / Dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-support-des-dice-copie-2-support-2-des-dice.png",
+        "x": 685,
+        "y": 806,
+        "w": 137,
+        "h": 247
+       },
+       {
+        "name": "support 1 Dé / Dice",
+        "type": "pixel",
+        "visible": true,
+        "file": "defense-support-des-dice-copie-2-support-1-de-dice.png",
+        "x": 685,
+        "y": 806,
+        "w": 137,
+        "h": 152
+       }
+      ]
+     },
+     {
+      "name": "Dés / Dice",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "Noir",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-des-dice-noir.png",
+        "x": 729,
+        "y": 844,
+        "w": 52,
+        "h": 55
+       },
+       {
+        "name": "Blanc",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-des-dice-blanc.png",
+        "x": 730,
+        "y": 845,
+        "w": 50,
+        "h": 52
+       },
+       {
+        "name": "Rouge",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-des-dice-rouge.png",
+        "x": 729,
+        "y": 845,
+        "w": 52,
+        "h": 55
+       },
+       {
+        "name": "Jaune",
+        "type": "pixel",
+        "visible": false,
+        "file": "defense-des-dice-jaune.png",
+        "x": 729,
+        "y": 845,
+        "w": 52,
+        "h": 55
+       }
+      ]
+     },
+     {
+      "name": "defense",
+      "type": "pixel",
+      "visible": true,
+      "file": "defense-defense.png",
+      "x": 654,
+      "y": 679,
+      "w": 134,
+      "h": 210
+     }
+    ]
+   },
+   {
+    "name": "ATTAQUE",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "Support Dés / Dice copie",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "support 5 dés / dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-support-des-dice-copie-support-5-des-dice.png",
+        "x": 0,
+        "y": 814,
+        "w": 137,
+        "h": 534
+       },
+       {
+        "name": "support 4 dés/dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-support-des-dice-copie-support-4-des-dice.png",
+        "x": 0,
+        "y": 814,
+        "w": 137,
+        "h": 437
+       },
+       {
+        "name": "support 3 dés / Dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-support-des-dice-copie-support-3-des-dice.png",
+        "x": 0,
+        "y": 814,
+        "w": 137,
+        "h": 343
+       },
+       {
+        "name": "support 2 dés / Dice",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-support-des-dice-copie-support-2-des-dice.png",
+        "x": 0,
+        "y": 814,
+        "w": 137,
+        "h": 247
+       },
+       {
+        "name": "support 1 Dé / Dice",
+        "type": "pixel",
+        "visible": true,
+        "file": "attaque-support-des-dice-copie-support-1-de-dice.png",
+        "x": 0,
+        "y": 814,
+        "w": 137,
+        "h": 152
+       }
+      ]
+     },
+     {
+      "name": "Dés / Dice",
+      "type": "group",
+      "visible": true,
+      "children": [
+       {
+        "name": "Noir",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-des-dice-noir.png",
+        "x": 729,
+        "y": 844,
+        "w": 52,
+        "h": 55
+       },
+       {
+        "name": "Blanc",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-des-dice-blanc.png",
+        "x": 730,
+        "y": 845,
+        "w": 50,
+        "h": 52
+       },
+       {
+        "name": "Rouge",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-des-dice-rouge.png",
+        "x": 729,
+        "y": 845,
+        "w": 52,
+        "h": 55
+       },
+       {
+        "name": "Jaune",
+        "type": "pixel",
+        "visible": false,
+        "file": "attaque-des-dice-jaune.png",
+        "x": 729,
+        "y": 845,
+        "w": 52,
+        "h": 55
+       }
+      ]
+     },
+     {
+      "name": "attaque mêlée",
+      "type": "pixel",
+      "visible": true,
+      "file": "attaque-attaque-melee.png",
+      "x": 30,
+      "y": 683,
+      "w": 138,
+      "h": 212
+     }
+    ]
+   },
+   {
+    "name": "Hit / Vie",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "Hit Point",
+      "type": "pixel",
+      "visible": true,
+      "file": "hit-vie-hit-point.png",
+      "x": 24,
+      "y": 1234,
+      "w": 162,
+      "h": 164
+     },
+     {
+      "name": "4",
+      "type": "type",
+      "visible": true,
+      "text": "4",
+      "file": "hit-vie-4.png",
+      "x": 84,
+      "y": 1273,
+      "w": 39,
+      "h": 67
+     }
+    ]
+   },
+   {
+    "name": "Type unité / Unity",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "cavalerie",
+      "type": "pixel",
+      "visible": true,
+      "file": "type-unite-unity-cavalerie.png",
+      "x": 196,
+      "y": 795,
+      "w": 93,
+      "h": 93
+     },
+     {
+      "name": "Infanterie",
+      "type": "pixel",
+      "visible": true,
+      "file": "type-unite-unity-infanterie.png",
+      "x": 196,
+      "y": 795,
+      "w": 93,
+      "h": 93
+     },
+     {
+      "name": "Volant / Flying",
+      "type": "pixel",
+      "visible": true,
+      "file": "type-unite-unity-volant-flying.png",
+      "x": 182,
+      "y": 782,
+      "w": 120,
+      "h": 120
+     },
+     {
+      "name": "Machine",
+      "type": "pixel",
+      "visible": true,
+      "file": "type-unite-unity-machine.png",
+      "x": 181,
+      "y": 782,
+      "w": 124,
+      "h": 124
+     }
+    ]
+   },
+   {
+    "name": "Pouvoirs / Powers",
+    "type": "group",
+    "visible": false,
+    "children": [
+     {
+      "name": "Cartes",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Carte Round / Tour",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-cartes-carte-round-tour.png",
+        "x": 476,
+        "y": 1135,
+        "w": 73,
+        "h": 105
+       },
+       {
+        "name": "Carte Council / Conseil",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-cartes-carte-council-conseil.png",
+        "x": 478,
+        "y": 1136,
+        "w": 72,
+        "h": 102
+       },
+       {
+        "name": "Carte Mythe / Tactic",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-cartes-carte-mythe-tactic.png",
+        "x": 477,
+        "y": 1135,
+        "w": 73,
+        "h": 105
+       }
+      ]
+     },
+     {
+      "name": "Dés 3D / 3D Dice",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Noir",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-des-3d-3d-dice-noir.png",
+        "x": 591,
+        "y": 1147,
+        "w": 72,
+        "h": 75
+       },
+       {
+        "name": "Blanc",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoirs-powers-des-3d-3d-dice-blanc.png",
+        "x": 592,
+        "y": 1148,
+        "w": 70,
+        "h": 72
+       },
+       {
+        "name": "Rouge",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoirs-powers-des-3d-3d-dice-rouge.png",
+        "x": 591,
+        "y": 1148,
+        "w": 72,
+        "h": 75
+       },
+       {
+        "name": "Violet",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-des-3d-3d-dice-violet.png",
+        "x": 591,
+        "y": 1148,
+        "w": 72,
+        "h": 75
+       },
+       {
+        "name": "Jaune",
+        "type": "pixel",
+        "visible": false,
+        "file": "pouvoirs-powers-des-3d-3d-dice-jaune.png",
+        "x": 591,
+        "y": 1148,
+        "w": 72,
+        "h": 75
+       }
+      ]
+     },
+     {
+      "name": "Tokens",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Myth token",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-tokens-myth-token.png",
+        "x": 549,
+        "y": 1140,
+        "w": 101,
+        "h": 106
+       },
+       {
+        "name": "XP token",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-tokens-xp-token.png",
+        "x": 612,
+        "y": 1134,
+        "w": 119,
+        "h": 101
+       }
+      ]
+     },
+     {
+      "name": "Faces Red/Rouge",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Kill",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-red-rouge-kill.png",
+        "x": 263,
+        "y": 1136,
+        "w": 93,
+        "h": 93
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-red-rouge-disrupt.png",
+        "x": 353,
+        "y": 1137,
+        "w": 95,
+        "h": 92
+       },
+       {
+        "name": "Push",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-red-rouge-push.png",
+        "x": 443,
+        "y": 1134,
+        "w": 95,
+        "h": 95
+       },
+       {
+        "name": "Calque 13",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-red-rouge-calque-13.png",
+        "x": 535,
+        "y": 1134,
+        "w": 93,
+        "h": 93
+       }
+      ]
+     },
+     {
+      "name": "Face Black/Noir",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Kill",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-face-black-noir-kill.png",
+        "x": 221,
+        "y": 1136,
+        "w": 92,
+        "h": 92
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-face-black-noir-disrupt.png",
+        "x": 311,
+        "y": 1135,
+        "w": 93,
+        "h": 93
+       },
+       {
+        "name": "Shield/Bouclier",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-face-black-noir-shield-bouclier.png",
+        "x": 404,
+        "y": 1133,
+        "w": 92,
+        "h": 93
+       }
+      ]
+     },
+     {
+      "name": "Faces White / Blanc",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Blank White / Blanc vierge",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-white-blanc-blank-white-blanc-vierge.png",
+        "x": 234,
+        "y": 1136,
+        "w": 88,
+        "h": 89
+       },
+       {
+        "name": "Disrupt White / disrupt Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-white-blanc-disrupt-white-disrupt-blanc.png",
+        "x": 321,
+        "y": 1136,
+        "w": 89,
+        "h": 90
+       },
+       {
+        "name": "Push White / Push Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-white-blanc-push-white-push-blanc.png",
+        "x": 409,
+        "y": 1136,
+        "w": 92,
+        "h": 93
+       },
+       {
+        "name": "Shield White / Bouclier Blanc",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-faces-white-blanc-shield-white-bouclier-blanc.png",
+        "x": 500,
+        "y": 1138,
+        "w": 94,
+        "h": 94
+       }
+      ]
+     },
+     {
+      "name": "Face Yellow / Jaune",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Blank / vierge",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-face-yellow-jaune-blank-vierge.png",
+        "x": 216,
+        "y": 1136,
+        "w": 91,
+        "h": 90
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-face-yellow-jaune-disrupt.png",
+        "x": 306,
+        "y": 1136,
+        "w": 91,
+        "h": 91
+       },
+       {
+        "name": "Calque 11",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-face-yellow-jaune-calque-11.png",
+        "x": 399,
+        "y": 1136,
+        "w": 92,
+        "h": 93
+       },
+       {
+        "name": "Calque 12",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-face-yellow-jaune-calque-12.png",
+        "x": 493,
+        "y": 1139,
+        "w": 88,
+        "h": 88
+       }
+      ]
+     },
+     {
+      "name": "Dice symbol / symbole dé",
+      "type": "group",
+      "visible": false,
+      "children": [
+       {
+        "name": "Shield",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-dice-symbol-symbole-de-shield.png",
+        "x": 506,
+        "y": 1037,
+        "w": 36,
+        "h": 52
+       },
+       {
+        "name": "push",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-dice-symbol-symbole-de-push.png",
+        "x": 700,
+        "y": 1029,
+        "w": 47,
+        "h": 50
+       },
+       {
+        "name": "Kill",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-dice-symbol-symbole-de-kill.png",
+        "x": 496,
+        "y": 1037,
+        "w": 59,
+        "h": 42
+       },
+       {
+        "name": "Tramp",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-dice-symbol-symbole-de-tramp.png",
+        "x": 644,
+        "y": 1031,
+        "w": 41,
+        "h": 46
+       },
+       {
+        "name": "Disrupt",
+        "type": "pixel",
+        "visible": true,
+        "file": "pouvoirs-powers-dice-symbol-symbole-de-disrupt.png",
+        "x": 704,
+        "y": 1029,
+        "w": 35,
+        "h": 58
+       }
+      ]
+     },
+     {
+      "name": "Texte 3",
+      "type": "type",
+      "visible": true,
+      "text": "Texte 1",
+      "file": "pouvoirs-powers-texte-3.png",
+      "x": 337,
+      "y": 1277,
+      "w": 78,
+      "h": 22
+     },
+     {
+      "name": "Flèche / Arrow",
+      "type": "pixel",
+      "visible": true,
+      "file": "pouvoirs-powers-fleche-arrow.png",
+      "x": 343,
+      "y": 1153,
+      "w": 99,
+      "h": 38
+     },
+     {
+      "name": "Texte 2",
+      "type": "type",
+      "visible": true,
+      "text": "Texte 1",
+      "file": "pouvoirs-powers-texte-2.png",
+      "x": 300,
+      "y": 1102,
+      "w": 94,
+      "h": 26
+     },
+     {
+      "name": "Ligne 2",
+      "type": "pixel",
+      "visible": true,
+      "file": "pouvoirs-powers-ligne-2.png",
+      "x": 147,
+      "y": 1252,
+      "w": 535,
+      "h": 11
+     },
+     {
+      "name": "Ligne 1 ",
+      "type": "pixel",
+      "visible": true,
+      "file": "pouvoirs-powers-ligne-1.png",
+      "x": 147,
+      "y": 1081,
+      "w": 535,
+      "h": 11
+     },
+     {
+      "name": "Texte 1",
+      "type": "type",
+      "visible": true,
+      "text": "Texte 1",
+      "file": "pouvoirs-powers-texte-1.png",
+      "x": 238,
+      "y": 991,
+      "w": 94,
+      "h": 26
+     }
+    ]
+   },
+   {
+    "name": "COMMAND / Commandement",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "commandement",
+      "type": "pixel",
+      "visible": true,
+      "file": "command-commandement-commandement.png",
+      "x": 643,
+      "y": 1250,
+      "w": 148,
+      "h": 132
+     },
+     {
+      "name": "2",
+      "type": "type",
+      "visible": true,
+      "text": "2",
+      "file": "command-commandement-2.png",
+      "x": 694,
+      "y": 1309,
+      "w": 31,
+      "h": 49
+     },
+     {
+      "name": "1",
+      "type": "type",
+      "visible": true,
+      "text": "1",
+      "file": "command-commandement-1.png",
+      "x": 754,
+      "y": 1313,
+      "w": 14,
+      "h": 39
+     }
+    ]
+   },
+   {
+    "name": "Skill / Traits",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "SKILL SUPPORT",
+      "type": "pixel",
+      "visible": true,
+      "file": "skill-traits-skill-support.png",
+      "x": 96,
+      "y": 911,
+      "w": 629,
+      "h": 79
+     },
+     {
+      "name": "Skill",
+      "type": "type",
+      "visible": true,
+      "text": "Skill",
+      "file": "skill-traits-skill.png",
+      "x": 366,
+      "y": 919,
+      "w": 85,
+      "h": 34
+     }
+    ]
+   },
+   {
+    "name": "Level / Niveau",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "support level",
+      "type": "pixel",
+      "visible": true,
+      "file": "level-niveau-support-level.png",
+      "x": 630,
+      "y": 30,
+      "w": 166,
+      "h": 166
+     },
+     {
+      "name": "fleche level",
+      "type": "pixel",
+      "visible": true,
+      "file": "level-niveau-fleche-level.png",
+      "x": 730,
+      "y": 130,
+      "w": 55,
+      "h": 64
+     },
+     {
+      "name": "1 etoile/star",
+      "type": "pixel",
+      "visible": true,
+      "file": "level-niveau-1-etoile-star.png",
+      "x": 684,
+      "y": 81,
+      "w": 62,
+      "h": 61
+     },
+     {
+      "name": "2 etoiles/stars ",
+      "type": "pixel",
+      "visible": false,
+      "file": "level-niveau-2-etoiles-stars.png",
+      "x": 655,
+      "y": 78,
+      "w": 114,
+      "h": 61
+     },
+     {
+      "name": "4",
+      "type": "type",
+      "visible": true,
+      "text": "4",
+      "file": "level-niveau-4.png",
+      "x": 747,
+      "y": 145,
+      "w": 23,
+      "h": 38
+     },
+     {
+      "name": "3 etoiles /stars ",
+      "type": "pixel",
+      "visible": false,
+      "file": "level-niveau-3-etoiles-stars.png",
+      "x": 656,
+      "y": 56,
+      "w": 114,
+      "h": 99
+     }
+    ]
+   },
+   {
+    "name": "FACTION",
+    "type": "group",
+    "visible": true,
+    "children": [
+     {
+      "name": "French / Français",
+      "type": "pixel",
+      "visible": true,
+      "file": "faction-french-francais.png",
+      "x": 30,
+      "y": 43,
+      "w": 148,
+      "h": 170
+     },
+     {
+      "name": "Vlad",
+      "type": "pixel",
+      "visible": true,
+      "file": "faction-vlad.png",
+      "x": 32,
+      "y": 46,
+      "w": 146,
+      "h": 166
+     },
+     {
+      "name": "Ottoman",
+      "type": "pixel",
+      "visible": true,
+      "file": "faction-ottoman.png",
+      "x": 33,
+      "y": 45,
+      "w": 147,
+      "h": 170
+     },
+     {
+      "name": "English / Anglais",
+      "type": "pixel",
+      "visible": true,
+      "file": "faction-english-anglais.png",
+      "x": 30,
+      "y": 43,
+      "w": 150,
+      "h": 172
+     },
+     {
+      "name": "Holy / Saint",
+      "type": "pixel",
+      "visible": true,
+      "file": "faction-holy-saint.png",
+      "x": 19,
+      "y": 21,
+      "w": 179,
+      "h": 197
+     },
+     {
+      "name": "Neutral / Neutre",
+      "type": "pixel",
+      "visible": true,
+      "file": "faction-neutral-neutre.png",
+      "x": 31,
+      "y": 42,
+      "w": 152,
+      "h": 175
+     },
+     {
+      "name": "UUnHoly / Impie",
+      "type": "pixel",
+      "visible": true,
+      "file": "faction-uunholy-impie.png",
+      "x": 21,
+      "y": 25,
+      "w": 179,
+      "h": 189
+     }
+    ]
+   }
+  ]
+ }
+}
