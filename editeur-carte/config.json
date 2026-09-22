@@ -1,0 +1,1564 @@
+{
+ "fonts": {
+  "Belwe-Condensed": "Belwe-Condensed.ttf",
+  "TraditioAH": "traditio.ttf",
+  "BaarSophiaBold": "baarsb__.TTF",
+  "BaarSophia": "BAARS___.TTF",
+  "BaarSophiaItalic": "baarsi__.TTF"
+ },
+ "templates": {
+  "unite": {
+   "label": "Unité",
+   "w": 515,
+   "h": 737,
+   "frame": {
+    "src": "front-devant.png",
+    "x": -1,
+    "y": -6,
+    "w": 516,
+    "h": 743
+   },
+   "faction": [
+    {
+     "id": "french",
+     "label": "Français",
+     "layer": {
+      "src": "factions-french-francais.png",
+      "x": 8,
+      "y": 23,
+      "w": 113,
+      "h": 126
+     }
+    },
+    {
+     "id": "english",
+     "label": "Anglais",
+     "layer": {
+      "src": "factions-english-anglais.png",
+      "x": 8,
+      "y": 23,
+      "w": 116,
+      "h": 130
+     }
+    },
+    {
+     "id": "ottoman",
+     "label": "Ottoman",
+     "layer": {
+      "src": "factions-ottoman.png",
+      "x": 9,
+      "y": 25,
+      "w": 116,
+      "h": 130
+     }
+    },
+    {
+     "id": "holy",
+     "label": "Saint / Holy",
+     "layer": {
+      "src": "factions-holy-saint.png",
+      "x": 8,
+      "y": 24,
+      "w": 116,
+      "h": 130
+     }
+    },
+    {
+     "id": "unholy",
+     "label": "Impie / UnHoly",
+     "layer": {
+      "src": "factions-unholy-impie.png",
+      "x": 8,
+      "y": 23,
+      "w": 112,
+      "h": 126
+     }
+    },
+    {
+     "id": "neutral",
+     "label": "Neutre",
+     "layer": {
+      "src": "factions-neutre-neutral.png",
+      "x": 9,
+      "y": 25,
+      "w": 117,
+      "h": 130
+     }
+    }
+   ],
+   "unitType": [
+    {
+     "id": "infanterie",
+     "label": "Infanterie",
+     "layer": {
+      "src": "unit-type-infanterie.png",
+      "x": 392,
+      "y": 18,
+      "w": 108,
+      "h": 108
+     }
+    },
+    {
+     "id": "cavalerie",
+     "label": "Cavalerie",
+     "layer": {
+      "src": "unit-type-cavalerie.png",
+      "x": 392,
+      "y": 19,
+      "w": 108,
+      "h": 108
+     }
+    },
+    {
+     "id": "volant",
+     "label": "Volant",
+     "layer": {
+      "src": "unit-type-volant.png",
+      "x": 392,
+      "y": 21,
+      "w": 107,
+      "h": 107
+     }
+    },
+    {
+     "id": "machine",
+     "label": "Machine",
+     "layer": {
+      "src": "unit-type-machine.png",
+      "x": 392,
+      "y": 21,
+      "w": 107,
+      "h": 107
+     }
+    }
+   ],
+   "attack": {
+    "modes": [
+     {
+      "id": "melee",
+      "label": "Mêlée",
+      "layer": {
+       "src": "attaque-attack-melee-melee.png",
+       "x": 30,
+       "y": 361,
+       "w": 101,
+       "h": 109
+      }
+     },
+     {
+      "id": "direct",
+      "label": "Tir direct",
+      "layer": {
+       "src": "attaque-attack-shots-direct-shot.png",
+       "x": 27,
+       "y": 338,
+       "w": 107,
+       "h": 141
+      }
+     },
+     {
+      "id": "arcing",
+      "label": "Tir courbe",
+      "layer": {
+       "src": "attaque-attack-shots-arcing-shot.png",
+       "x": 1,
+       "y": 319,
+       "w": 156,
+       "h": 172
+      }
+     }
+    ],
+    "supports": [
+     {
+      "src": "attaque-attack-support-de-dice-back-1-de-1dice.png",
+      "x": 19,
+      "y": 454,
+      "w": 80,
+      "h": 127
+     },
+     {
+      "src": "attaque-attack-support-de-dice-back-2-des-2dice.png",
+      "x": 7,
+      "y": 453,
+      "w": 99,
+      "h": 195
+     },
+     {
+      "src": "attaque-attack-support-de-dice-back-3des-3dices.png",
+      "x": 13,
+      "y": 448,
+      "w": 96,
+      "h": 270
+     }
+    ],
+    "socketsByCount": [
+     [
+      [
+       57.5,
+       504
+      ]
+     ],
+     [
+      [
+       54.5,
+       504
+      ],
+      [
+       54.5,
+       574
+      ]
+     ],
+     [
+      [
+       57.5,
+       503
+      ],
+      [
+       57.5,
+       573
+      ],
+      [
+       57.5,
+       642
+      ]
+     ]
+    ],
+    "refSocket": [
+     57.5,
+     504
+    ],
+    "dice": {
+     "noir": {
+      "src": "attaque-attack-des-noir.png",
+      "x": 37,
+      "y": 487,
+      "w": 41,
+      "h": 43
+     },
+     "blanc": {
+      "src": "attaque-attack-des-blanc.png",
+      "x": 38,
+      "y": 488,
+      "w": 39,
+      "h": 41
+     },
+     "rouge": {
+      "src": "attaque-attack-des-rouge.png",
+      "x": 37,
+      "y": 488,
+      "w": 41,
+      "h": 43
+     },
+     "jaune": {
+      "src": "attaque-attack-des-jaune.png",
+      "x": 37,
+      "y": 488,
+      "w": 41,
+      "h": 43
+     }
+    },
+    "maxDice": 3
+   },
+   "defense": {
+    "icon": {
+     "src": "defense-calque-7.png",
+     "x": 384,
+     "y": 359,
+     "w": 100,
+     "h": 108
+    },
+    "supports": [
+     {
+      "src": "defense-support-de-dice-back-1-de-1dice.png",
+      "x": 415,
+      "y": 444,
+      "w": 92,
+      "h": 134
+     },
+     {
+      "src": "defense-support-de-dice-back-2-des-2dice.png",
+      "x": 409,
+      "y": 442,
+      "w": 103,
+      "h": 202
+     },
+     {
+      "src": "defense-support-de-dice-back-3des-3dices.png",
+      "x": 415,
+      "y": 453,
+      "w": 93,
+      "h": 260
+     }
+    ],
+    "socketsByCount": [
+     [
+      [
+       458.5,
+       500
+      ]
+     ],
+     [
+      [
+       455.5,
+       500
+      ],
+      [
+       455.5,
+       570
+      ]
+     ],
+     [
+      [
+       458.5,
+       499
+      ],
+      [
+       458.5,
+       569
+      ],
+      [
+       458.5,
+       638
+      ]
+     ]
+    ],
+    "refSocket": [
+     458.5,
+     500
+    ],
+    "dice": {
+     "noir": {
+      "src": "defense-des-noir.png",
+      "x": 439,
+      "y": 483,
+      "w": 41,
+      "h": 43
+     },
+     "blanc": {
+      "src": "defense-des-blanc.png",
+      "x": 440,
+      "y": 484,
+      "w": 39,
+      "h": 41
+     },
+     "rouge": {
+      "src": "defense-des-rouge.png",
+      "x": 439,
+      "y": 484,
+      "w": 41,
+      "h": 43
+     },
+     "jaune": {
+      "src": "defense-des-jaune.png",
+      "x": 439,
+      "y": 484,
+      "w": 41,
+      "h": 43
+     }
+    },
+    "maxDice": 3
+   },
+   "skillBand": {
+    "src": "skill-trait-back-for-skill-fond.png",
+    "x": -24,
+    "y": 500,
+    "w": 564,
+    "h": 85
+   },
+   "texts": {
+    "name": {
+     "label": "Nom",
+     "value": "Nom - Name",
+     "cx": 257,
+     "baseline": 71,
+     "size": 41.34,
+     "font": "Belwe-Condensed",
+     "color": "#121009",
+     "maxWidth": 345,
+     "align": "center"
+    },
+    "skill": {
+     "label": "Trait / Skill",
+     "value": "Skill here",
+     "cx": 258,
+     "baseline": 538,
+     "size": 35.43,
+     "font": "Belwe-Condensed",
+     "color": "#ffffff",
+     "maxWidth": 480,
+     "align": "center"
+    },
+    "range": {
+     "label": "Portée",
+     "value": "2",
+     "cx": 80.5,
+     "baseline": 375,
+     "size": 41.34,
+     "font": "Belwe-Condensed",
+     "color": "#ffffff",
+     "maxWidth": 60,
+     "align": "center",
+     "onlyWhen": {
+      "field": "attackMode",
+      "in": [
+       "direct",
+       "arcing"
+      ]
+     }
+    }
+   },
+   "powersOrigin": "Pouvoir / Power/",
+   "palette": [
+    {
+     "group": "Cartes",
+     "items": [
+      {
+       "id": "pouvoir-power-cartes-carte-round-tou",
+       "label": "Carte Tour",
+       "src": "pouvoir-power-cartes-carte-round-tour.png",
+       "w": 63,
+       "h": 91
+      },
+      {
+       "id": "pouvoir-power-cartes-carte-council-consei",
+       "label": "Carte Conseil",
+       "src": "pouvoir-power-cartes-carte-council-conseil.png",
+       "w": 62,
+       "h": 88
+      },
+      {
+       "id": "pouvoir-power-cartes-carte-mythe-tacti",
+       "label": "Carte Mythe",
+       "src": "pouvoir-power-cartes-carte-mythe-tactic.png",
+       "w": 63,
+       "h": 91
+      }
+     ]
+    },
+    {
+     "group": "Dés 3D",
+     "items": [
+      {
+       "id": "pouvoir-power-des-3d-3d-dice-noi",
+       "label": "Dé noir",
+       "src": "pouvoir-power-des-3d-3d-dice-noir.png",
+       "w": 56,
+       "h": 58
+      },
+      {
+       "id": "pouvoir-power-des-3d-3d-dice-blan",
+       "label": "Dé blanc",
+       "src": "pouvoir-power-des-3d-3d-dice-blanc.png",
+       "w": 54,
+       "h": 56
+      },
+      {
+       "id": "pouvoir-power-des-3d-3d-dice-roug",
+       "label": "Dé rouge",
+       "src": "pouvoir-power-des-3d-3d-dice-rouge.png",
+       "w": 56,
+       "h": 58
+      },
+      {
+       "id": "pouvoir-power-des-3d-3d-dice-jaun",
+       "label": "Dé jaune",
+       "src": "pouvoir-power-des-3d-3d-dice-jaune.png",
+       "w": 56,
+       "h": 58
+      }
+     ]
+    },
+    {
+     "group": "Jetons",
+     "items": [
+      {
+       "id": "pouvoir-power-tokens-myth-toke",
+       "label": "Jeton Mythe",
+       "src": "pouvoir-power-tokens-myth-token.png",
+       "w": 85,
+       "h": 89
+      },
+      {
+       "id": "pouvoir-power-tokens-xp-toke",
+       "label": "Jeton XP",
+       "src": "pouvoir-power-tokens-xp-token.png",
+       "w": 100,
+       "h": 85
+      }
+     ]
+    },
+    {
+     "group": "Faces rouges",
+     "items": [
+      {
+       "id": "pouvoir-power-faces-red-rouge-kil",
+       "label": "Kill",
+       "src": "pouvoir-power-faces-red-rouge-kill.png",
+       "w": 59,
+       "h": 59
+      },
+      {
+       "id": "pouvoir-power-faces-red-rouge-disrup",
+       "label": "Disrupt",
+       "src": "pouvoir-power-faces-red-rouge-disrupt.png",
+       "w": 60,
+       "h": 58
+      },
+      {
+       "id": "pouvoir-power-faces-red-rouge-pus",
+       "label": "Push",
+       "src": "pouvoir-power-faces-red-rouge-push.png",
+       "w": 60,
+       "h": 60
+      },
+      {
+       "id": "pouvoir-power-faces-red-rouge-calque-1",
+       "label": "Face 4",
+       "src": "pouvoir-power-faces-red-rouge-calque-13.png",
+       "w": 59,
+       "h": 59
+      }
+     ]
+    },
+    {
+     "group": "Faces noires",
+     "items": [
+      {
+       "id": "pouvoir-power-face-black-noir-kil",
+       "label": "Kill",
+       "src": "pouvoir-power-face-black-noir-kill.png",
+       "w": 58,
+       "h": 58
+      },
+      {
+       "id": "pouvoir-power-face-black-noir-disrup",
+       "label": "Disrupt",
+       "src": "pouvoir-power-face-black-noir-disrupt.png",
+       "w": 59,
+       "h": 59
+      },
+      {
+       "id": "pouvoir-power-face-black-noir-shield-bouclie",
+       "label": "Bouclier",
+       "src": "pouvoir-power-face-black-noir-shield-bouclier.png",
+       "w": 58,
+       "h": 59
+      }
+     ]
+    },
+    {
+     "group": "Faces blanches",
+     "items": [
+      {
+       "id": "pouvoir-power-faces-white-blanc-blank-white-blanc-vierg",
+       "label": "Vierge",
+       "src": "pouvoir-power-faces-white-blanc-blank-white-blanc-vierge.png",
+       "w": 59,
+       "h": 59
+      },
+      {
+       "id": "pouvoir-power-faces-white-blanc-disrupt-white-disrupt-blan",
+       "label": "Disrupt",
+       "src": "pouvoir-power-faces-white-blanc-disrupt-white-disrupt-blanc.png",
+       "w": 60,
+       "h": 60
+      },
+      {
+       "id": "pouvoir-power-faces-white-blanc-push-white-push-blan",
+       "label": "Push",
+       "src": "pouvoir-power-faces-white-blanc-push-white-push-blanc.png",
+       "w": 62,
+       "h": 62
+      },
+      {
+       "id": "pouvoir-power-faces-white-blanc-shield-white-bouclier-blan",
+       "label": "Bouclier",
+       "src": "pouvoir-power-faces-white-blanc-shield-white-bouclier-blanc.png",
+       "w": 63,
+       "h": 63
+      }
+     ]
+    },
+    {
+     "group": "Faces jaunes",
+     "items": [
+      {
+       "id": "pouvoir-power-face-yellow-jaune-blank-vierg",
+       "label": "Vierge",
+       "src": "pouvoir-power-face-yellow-jaune-blank-vierge.png",
+       "w": 60,
+       "h": 59
+      },
+      {
+       "id": "pouvoir-power-face-yellow-jaune-disrup",
+       "label": "Disrupt",
+       "src": "pouvoir-power-face-yellow-jaune-disrupt.png",
+       "w": 60,
+       "h": 60
+      },
+      {
+       "id": "pouvoir-power-face-yellow-jaune-calque-1",
+       "label": "Face 3",
+       "src": "pouvoir-power-face-yellow-jaune-calque-11.png",
+       "w": 61,
+       "h": 61
+      },
+      {
+       "id": "pouvoir-power-face-yellow-jaune-calque-1",
+       "label": "Face 4",
+       "src": "pouvoir-power-face-yellow-jaune-calque-12.png",
+       "w": 58,
+       "h": 58
+      }
+     ]
+    },
+    {
+     "group": "Symboles",
+     "items": [
+      {
+       "id": "pouvoir-power-dice-symbol-symbole-de-shiel",
+       "label": "Bouclier",
+       "src": "pouvoir-power-dice-symbol-symbole-de-shield.png",
+       "w": 36,
+       "h": 52
+      },
+      {
+       "id": "pouvoir-power-dice-symbol-symbole-de-pus",
+       "label": "Push",
+       "src": "pouvoir-power-dice-symbol-symbole-de-push.png",
+       "w": 47,
+       "h": 50
+      },
+      {
+       "id": "pouvoir-power-dice-symbol-symbole-de-kil",
+       "label": "Kill",
+       "src": "pouvoir-power-dice-symbol-symbole-de-kill.png",
+       "w": 59,
+       "h": 42
+      },
+      {
+       "id": "pouvoir-power-dice-symbol-symbole-de-tram",
+       "label": "Tramp",
+       "src": "pouvoir-power-dice-symbol-symbole-de-tramp.png",
+       "w": 41,
+       "h": 46
+      },
+      {
+       "id": "pouvoir-power-dice-symbol-symbole-de-disrup",
+       "label": "Disrupt",
+       "src": "pouvoir-power-dice-symbol-symbole-de-disrupt.png",
+       "w": 35,
+       "h": 58
+      }
+     ]
+    },
+    {
+     "group": "Divers",
+     "items": [
+      {
+       "id": "pouvoir-power-fleche-arro",
+       "label": "Flèche",
+       "src": "pouvoir-power-fleche-arrow.png",
+       "w": 130,
+       "h": 84
+      }
+     ]
+    }
+   ],
+   "powersDefault": {
+    "x": 258,
+    "y": 630
+   },
+   "powerTextStyle": {
+    "size": 35.43,
+    "font": "BaarSophiaBold",
+    "color": "#20120c"
+   }
+  },
+  "tarot": {
+   "label": "Tarot",
+   "w": 827,
+   "h": 1419,
+   "frame": {
+    "src": "calque-6.png",
+    "x": -57,
+    "y": -58,
+    "w": 945,
+    "h": 1535
+   },
+   "faction": [
+    {
+     "id": "french",
+     "label": "Français",
+     "layer": {
+      "src": "faction-french-francais.png",
+      "x": 30,
+      "y": 43,
+      "w": 148,
+      "h": 170
+     }
+    },
+    {
+     "id": "english",
+     "label": "Anglais",
+     "layer": {
+      "src": "faction-english-anglais.png",
+      "x": 30,
+      "y": 43,
+      "w": 150,
+      "h": 172
+     }
+    },
+    {
+     "id": "ottoman",
+     "label": "Ottoman",
+     "layer": {
+      "src": "faction-ottoman.png",
+      "x": 33,
+      "y": 45,
+      "w": 147,
+      "h": 170
+     }
+    },
+    {
+     "id": "holy",
+     "label": "Saint / Holy",
+     "layer": {
+      "src": "faction-holy-saint.png",
+      "x": 19,
+      "y": 21,
+      "w": 179,
+      "h": 197
+     }
+    },
+    {
+     "id": "unholy",
+     "label": "Impie / UnHoly",
+     "layer": {
+      "src": "faction-uunholy-impie.png",
+      "x": 21,
+      "y": 25,
+      "w": 179,
+      "h": 189
+     }
+    },
+    {
+     "id": "neutral",
+     "label": "Neutre",
+     "layer": {
+      "src": "faction-neutral-neutre.png",
+      "x": 31,
+      "y": 42,
+      "w": 152,
+      "h": 175
+     }
+    },
+    {
+     "id": "vlad",
+     "label": "Vlad",
+     "layer": {
+      "src": "faction-vlad.png",
+      "x": 32,
+      "y": 46,
+      "w": 146,
+      "h": 166
+     }
+    }
+   ],
+   "unitType": [
+    {
+     "id": "infanterie",
+     "label": "Infanterie",
+     "layer": {
+      "src": "type-unite-unity-infanterie.png",
+      "x": 196,
+      "y": 795,
+      "w": 93,
+      "h": 93
+     }
+    },
+    {
+     "id": "cavalerie",
+     "label": "Cavalerie",
+     "layer": {
+      "src": "type-unite-unity-cavalerie.png",
+      "x": 196,
+      "y": 795,
+      "w": 93,
+      "h": 93
+     }
+    },
+    {
+     "id": "volant",
+     "label": "Volant",
+     "layer": {
+      "src": "type-unite-unity-volant-flying.png",
+      "x": 182,
+      "y": 782,
+      "w": 120,
+      "h": 120
+     }
+    },
+    {
+     "id": "machine",
+     "label": "Machine",
+     "layer": {
+      "src": "type-unite-unity-machine.png",
+      "x": 181,
+      "y": 782,
+      "w": 124,
+      "h": 124
+     }
+    }
+   ],
+   "attack": {
+    "modes": [
+     {
+      "id": "melee",
+      "label": "Mêlée",
+      "layer": {
+       "src": "attaque-attaque-melee.png",
+       "x": 30,
+       "y": 683,
+       "w": 138,
+       "h": 212
+      }
+     }
+    ],
+    "supports": [
+     {
+      "src": "attaque-support-des-dice-copie-support-1-de-dice.png",
+      "x": 0,
+      "y": 814,
+      "w": 137,
+      "h": 152
+     },
+     {
+      "src": "attaque-support-des-dice-copie-support-2-des-dice.png",
+      "x": 0,
+      "y": 814,
+      "w": 137,
+      "h": 247
+     },
+     {
+      "src": "attaque-support-des-dice-copie-support-3-des-dice.png",
+      "x": 0,
+      "y": 814,
+      "w": 137,
+      "h": 343
+     },
+     {
+      "src": "attaque-support-des-dice-copie-support-4-des-dice.png",
+      "x": 0,
+      "y": 814,
+      "w": 137,
+      "h": 437
+     },
+     {
+      "src": "attaque-support-des-dice-copie-support-5-des-dice.png",
+      "x": 0,
+      "y": 814,
+      "w": 137,
+      "h": 534
+     }
+    ],
+    "socketsByCount": [
+     [
+      [
+       68,
+       874
+      ]
+     ],
+     [
+      [
+       68,
+       874
+      ],
+      [
+       68,
+       970.5
+      ]
+     ],
+     [
+      [
+       68,
+       874
+      ],
+      [
+       68,
+       970.5
+      ],
+      [
+       68,
+       1064.5
+      ]
+     ],
+     [
+      [
+       68,
+       874
+      ],
+      [
+       68,
+       970.5
+      ],
+      [
+       68,
+       1064.5
+      ],
+      [
+       68,
+       1159.5
+      ]
+     ],
+     [
+      [
+       68,
+       874
+      ],
+      [
+       68,
+       970.5
+      ],
+      [
+       68,
+       1064.5
+      ],
+      [
+       68,
+       1159.5
+      ],
+      [
+       68,
+       1254.5
+      ]
+     ]
+    ],
+    "refSocket": [
+     753,
+     866
+    ],
+    "dice": {
+     "noir": {
+      "src": "attaque-des-dice-noir.png",
+      "x": 729,
+      "y": 844,
+      "w": 52,
+      "h": 55
+     },
+     "blanc": {
+      "src": "attaque-des-dice-blanc.png",
+      "x": 730,
+      "y": 845,
+      "w": 50,
+      "h": 52
+     },
+     "rouge": {
+      "src": "attaque-des-dice-rouge.png",
+      "x": 729,
+      "y": 845,
+      "w": 52,
+      "h": 55
+     },
+     "jaune": {
+      "src": "attaque-des-dice-jaune.png",
+      "x": 729,
+      "y": 845,
+      "w": 52,
+      "h": 55
+     }
+    },
+    "maxDice": 5
+   },
+   "defense": {
+    "icon": {
+     "src": "defense-defense.png",
+     "x": 654,
+     "y": 679,
+     "w": 134,
+     "h": 210
+    },
+    "supports": [
+     {
+      "src": "defense-support-des-dice-copie-2-support-1-de-dice.png",
+      "x": 685,
+      "y": 806,
+      "w": 137,
+      "h": 152
+     },
+     {
+      "src": "defense-support-des-dice-copie-2-support-2-des-dice.png",
+      "x": 685,
+      "y": 806,
+      "w": 137,
+      "h": 247
+     },
+     {
+      "src": "defense-support-des-dice-copie-2-support-3-des-dice.png",
+      "x": 685,
+      "y": 806,
+      "w": 137,
+      "h": 343
+     },
+     {
+      "src": "defense-support-des-dice-copie-2-support-4-des-dice.png",
+      "x": 685,
+      "y": 806,
+      "w": 137,
+      "h": 437
+     },
+     {
+      "src": "defense-support-des-dice-copie-2-support-5-des-dice.png",
+      "x": 685,
+      "y": 806,
+      "w": 137,
+      "h": 534
+     }
+    ],
+    "socketsByCount": [
+     [
+      [
+       753,
+       866
+      ]
+     ],
+     [
+      [
+       753,
+       866
+      ],
+      [
+       753,
+       962.5
+      ]
+     ],
+     [
+      [
+       753,
+       866
+      ],
+      [
+       753,
+       962.5
+      ],
+      [
+       753,
+       1056.5
+      ]
+     ],
+     [
+      [
+       753,
+       866
+      ],
+      [
+       753,
+       962.5
+      ],
+      [
+       753,
+       1056.5
+      ],
+      [
+       753,
+       1151.5
+      ]
+     ],
+     [
+      [
+       753,
+       866
+      ],
+      [
+       753,
+       962.5
+      ],
+      [
+       753,
+       1056.5
+      ],
+      [
+       753,
+       1151.5
+      ],
+      [
+       753,
+       1246.5
+      ]
+     ]
+    ],
+    "refSocket": [
+     753,
+     866
+    ],
+    "dice": {
+     "noir": {
+      "src": "defense-des-dice-noir.png",
+      "x": 729,
+      "y": 844,
+      "w": 52,
+      "h": 55
+     },
+     "blanc": {
+      "src": "defense-des-dice-blanc.png",
+      "x": 730,
+      "y": 845,
+      "w": 50,
+      "h": 52
+     },
+     "rouge": {
+      "src": "defense-des-dice-rouge.png",
+      "x": 729,
+      "y": 845,
+      "w": 52,
+      "h": 55
+     },
+     "jaune": {
+      "src": "defense-des-dice-jaune.png",
+      "x": 729,
+      "y": 845,
+      "w": 52,
+      "h": 55
+     }
+    },
+    "maxDice": 5
+   },
+   "skillBand": {
+    "src": "skill-traits-skill-support.png",
+    "x": 96,
+    "y": 911,
+    "w": 629,
+    "h": 79
+   },
+   "level": {
+    "support": {
+     "src": "level-niveau-support-level.png",
+     "x": 630,
+     "y": 30,
+     "w": 166,
+     "h": 166
+    },
+    "arrow": {
+     "src": "level-niveau-fleche-level.png",
+     "x": 730,
+     "y": 130,
+     "w": 55,
+     "h": 64
+    },
+    "stars": [
+     {
+      "src": "level-niveau-1-etoile-star.png",
+      "x": 684,
+      "y": 81,
+      "w": 62,
+      "h": 61
+     },
+     {
+      "src": "level-niveau-2-etoiles-stars.png",
+      "x": 655,
+      "y": 78,
+      "w": 114,
+      "h": 61
+     },
+     {
+      "src": "level-niveau-3-etoiles-stars.png",
+      "x": 656,
+      "y": 56,
+      "w": 114,
+      "h": 99
+     }
+    ]
+   },
+   "hit": {
+    "support": {
+     "src": "hit-vie-hit-point.png",
+     "x": 24,
+     "y": 1234,
+     "w": 162,
+     "h": 164
+    }
+   },
+   "command": {
+    "support": {
+     "src": "command-commandement-commandement.png",
+     "x": 643,
+     "y": 1250,
+     "w": 148,
+     "h": 132
+    }
+   },
+   "lines": [
+    {
+     "src": "pouvoirs-powers-ligne-1.png",
+     "x": 147,
+     "y": 1081,
+     "w": 535,
+     "h": 11
+    },
+    {
+     "src": "pouvoirs-powers-ligne-2.png",
+     "x": 147,
+     "y": 1252,
+     "w": 535,
+     "h": 11
+    }
+   ],
+   "texts": {
+    "name": {
+     "label": "Nom",
+     "value": "Nom - Name",
+     "cx": 415,
+     "baseline": 115,
+     "size": 70.87,
+     "font": "Belwe-Condensed",
+     "color": "#000000",
+     "maxWidth": 470,
+     "align": "center"
+    },
+    "skill": {
+     "label": "Trait / Skill",
+     "value": "Skill",
+     "cx": 410,
+     "baseline": 953,
+     "size": 47.24,
+     "font": "Belwe-Condensed",
+     "color": "#ffffff",
+     "maxWidth": 570,
+     "align": "center"
+    },
+    "hit": {
+     "label": "Points de vie",
+     "value": "4",
+     "cx": 103.5,
+     "baseline": 1340,
+     "size": 82.68,
+     "font": "TraditioAH",
+     "color": "#ffffff",
+     "maxWidth": 110,
+     "align": "center"
+    },
+    "level": {
+     "label": "Niveau (chiffre)",
+     "value": "4",
+     "cx": 758.5,
+     "baseline": 183,
+     "size": 47.24,
+     "font": "TraditioAH",
+     "color": "#ffffff",
+     "maxWidth": 60,
+     "align": "center"
+    },
+    "command": {
+     "label": "Commandement",
+     "value": "2",
+     "cx": 709.5,
+     "baseline": 1358,
+     "size": 59.06,
+     "font": "TraditioAH",
+     "color": "#010101",
+     "maxWidth": 70,
+     "align": "center"
+    },
+    "command2": {
+     "label": "Commandement (petit)",
+     "value": "1",
+     "cx": 761,
+     "baseline": 1352,
+     "size": 47.24,
+     "font": "TraditioAH",
+     "color": "#ffffff",
+     "maxWidth": 50,
+     "align": "center"
+    }
+   },
+   "powersOrigin": "Pouvoirs / Powers/",
+   "palette": [
+    {
+     "group": "Cartes",
+     "items": [
+      {
+       "id": "pouvoirs-powers-cartes-carte-round-tou",
+       "label": "Carte Tour",
+       "src": "pouvoirs-powers-cartes-carte-round-tour.png",
+       "w": 73,
+       "h": 105
+      },
+      {
+       "id": "pouvoirs-powers-cartes-carte-council-consei",
+       "label": "Carte Conseil",
+       "src": "pouvoirs-powers-cartes-carte-council-conseil.png",
+       "w": 72,
+       "h": 102
+      },
+      {
+       "id": "pouvoirs-powers-cartes-carte-mythe-tacti",
+       "label": "Carte Mythe",
+       "src": "pouvoirs-powers-cartes-carte-mythe-tactic.png",
+       "w": 73,
+       "h": 105
+      }
+     ]
+    },
+    {
+     "group": "Dés 3D",
+     "items": [
+      {
+       "id": "pouvoirs-powers-des-3d-3d-dice-noi",
+       "label": "Dé noir",
+       "src": "pouvoirs-powers-des-3d-3d-dice-noir.png",
+       "w": 72,
+       "h": 75
+      },
+      {
+       "id": "pouvoirs-powers-des-3d-3d-dice-blan",
+       "label": "Dé blanc",
+       "src": "pouvoirs-powers-des-3d-3d-dice-blanc.png",
+       "w": 70,
+       "h": 72
+      },
+      {
+       "id": "pouvoirs-powers-des-3d-3d-dice-roug",
+       "label": "Dé rouge",
+       "src": "pouvoirs-powers-des-3d-3d-dice-rouge.png",
+       "w": 72,
+       "h": 75
+      },
+      {
+       "id": "pouvoirs-powers-des-3d-3d-dice-jaun",
+       "label": "Dé jaune",
+       "src": "pouvoirs-powers-des-3d-3d-dice-jaune.png",
+       "w": 72,
+       "h": 75
+      },
+      {
+       "id": "pouvoirs-powers-des-3d-3d-dice-viole",
+       "label": "Dé violet",
+       "src": "pouvoirs-powers-des-3d-3d-dice-violet.png",
+       "w": 72,
+       "h": 75
+      }
+     ]
+    },
+    {
+     "group": "Jetons",
+     "items": [
+      {
+       "id": "pouvoirs-powers-tokens-myth-toke",
+       "label": "Jeton Mythe",
+       "src": "pouvoirs-powers-tokens-myth-token.png",
+       "w": 101,
+       "h": 106
+      },
+      {
+       "id": "pouvoirs-powers-tokens-xp-toke",
+       "label": "Jeton XP",
+       "src": "pouvoirs-powers-tokens-xp-token.png",
+       "w": 119,
+       "h": 101
+      }
+     ]
+    },
+    {
+     "group": "Faces rouges",
+     "items": [
+      {
+       "id": "pouvoirs-powers-faces-red-rouge-kil",
+       "label": "Kill",
+       "src": "pouvoirs-powers-faces-red-rouge-kill.png",
+       "w": 93,
+       "h": 93
+      },
+      {
+       "id": "pouvoirs-powers-faces-red-rouge-disrup",
+       "label": "Disrupt",
+       "src": "pouvoirs-powers-faces-red-rouge-disrupt.png",
+       "w": 95,
+       "h": 92
+      },
+      {
+       "id": "pouvoirs-powers-faces-red-rouge-pus",
+       "label": "Push",
+       "src": "pouvoirs-powers-faces-red-rouge-push.png",
+       "w": 95,
+       "h": 95
+      },
+      {
+       "id": "pouvoirs-powers-faces-red-rouge-calque-1",
+       "label": "Face 4",
+       "src": "pouvoirs-powers-faces-red-rouge-calque-13.png",
+       "w": 93,
+       "h": 93
+      }
+     ]
+    },
+    {
+     "group": "Faces noires",
+     "items": [
+      {
+       "id": "pouvoirs-powers-face-black-noir-kil",
+       "label": "Kill",
+       "src": "pouvoirs-powers-face-black-noir-kill.png",
+       "w": 92,
+       "h": 92
+      },
+      {
+       "id": "pouvoirs-powers-face-black-noir-disrup",
+       "label": "Disrupt",
+       "src": "pouvoirs-powers-face-black-noir-disrupt.png",
+       "w": 93,
+       "h": 93
+      },
+      {
+       "id": "pouvoirs-powers-face-black-noir-shield-bouclie",
+       "label": "Bouclier",
+       "src": "pouvoirs-powers-face-black-noir-shield-bouclier.png",
+       "w": 92,
+       "h": 93
+      }
+     ]
+    },
+    {
+     "group": "Faces blanches",
+     "items": [
+      {
+       "id": "pouvoirs-powers-faces-white-blanc-blank-white-blanc-vierg",
+       "label": "Vierge",
+       "src": "pouvoirs-powers-faces-white-blanc-blank-white-blanc-vierge.png",
+       "w": 88,
+       "h": 89
+      },
+      {
+       "id": "pouvoirs-powers-faces-white-blanc-disrupt-white-disrupt-blan",
+       "label": "Disrupt",
+       "src": "pouvoirs-powers-faces-white-blanc-disrupt-white-disrupt-blanc.png",
+       "w": 89,
+       "h": 90
+      },
+      {
+       "id": "pouvoirs-powers-faces-white-blanc-push-white-push-blan",
+       "label": "Push",
+       "src": "pouvoirs-powers-faces-white-blanc-push-white-push-blanc.png",
+       "w": 92,
+       "h": 93
+      },
+      {
+       "id": "pouvoirs-powers-faces-white-blanc-shield-white-bouclier-blan",
+       "label": "Bouclier",
+       "src": "pouvoirs-powers-faces-white-blanc-shield-white-bouclier-blanc.png",
+       "w": 94,
+       "h": 94
+      }
+     ]
+    },
+    {
+     "group": "Faces jaunes",
+     "items": [
+      {
+       "id": "pouvoirs-powers-face-yellow-jaune-blank-vierg",
+       "label": "Vierge",
+       "src": "pouvoirs-powers-face-yellow-jaune-blank-vierge.png",
+       "w": 91,
+       "h": 90
+      },
+      {
+       "id": "pouvoirs-powers-face-yellow-jaune-disrup",
+       "label": "Disrupt",
+       "src": "pouvoirs-powers-face-yellow-jaune-disrupt.png",
+       "w": 91,
+       "h": 91
+      },
+      {
+       "id": "pouvoirs-powers-face-yellow-jaune-calque-1",
+       "label": "Face 3",
+       "src": "pouvoirs-powers-face-yellow-jaune-calque-11.png",
+       "w": 92,
+       "h": 93
+      },
+      {
+       "id": "pouvoirs-powers-face-yellow-jaune-calque-1",
+       "label": "Face 4",
+       "src": "pouvoirs-powers-face-yellow-jaune-calque-12.png",
+       "w": 88,
+       "h": 88
+      }
+     ]
+    },
+    {
+     "group": "Symboles",
+     "items": [
+      {
+       "id": "pouvoirs-powers-dice-symbol-symbole-de-shiel",
+       "label": "Bouclier",
+       "src": "pouvoirs-powers-dice-symbol-symbole-de-shield.png",
+       "w": 36,
+       "h": 52
+      },
+      {
+       "id": "pouvoirs-powers-dice-symbol-symbole-de-pus",
+       "label": "Push",
+       "src": "pouvoirs-powers-dice-symbol-symbole-de-push.png",
+       "w": 47,
+       "h": 50
+      },
+      {
+       "id": "pouvoirs-powers-dice-symbol-symbole-de-kil",
+       "label": "Kill",
+       "src": "pouvoirs-powers-dice-symbol-symbole-de-kill.png",
+       "w": 59,
+       "h": 42
+      },
+      {
+       "id": "pouvoirs-powers-dice-symbol-symbole-de-tram",
+       "label": "Tramp",
+       "src": "pouvoirs-powers-dice-symbol-symbole-de-tramp.png",
+       "w": 41,
+       "h": 46
+      },
+      {
+       "id": "pouvoirs-powers-dice-symbol-symbole-de-disrup",
+       "label": "Disrupt",
+       "src": "pouvoirs-powers-dice-symbol-symbole-de-disrupt.png",
+       "w": 35,
+       "h": 58
+      }
+     ]
+    },
+    {
+     "group": "Divers",
+     "items": [
+      {
+       "id": "pouvoirs-powers-fleche-arro",
+       "label": "Flèche",
+       "src": "pouvoirs-powers-fleche-arrow.png",
+       "w": 99,
+       "h": 38
+      },
+      {
+       "id": "pouvoirs-powers-ligne-",
+       "label": "Ligne",
+       "src": "pouvoirs-powers-ligne-1.png",
+       "w": 535,
+       "h": 11
+      },
+      {
+       "id": "pouvoirs-powers-ligne-",
+       "label": "Ligne",
+       "src": "pouvoirs-powers-ligne-2.png",
+       "w": 535,
+       "h": 11
+      }
+     ]
+    }
+   ],
+   "powersDefault": {
+    "x": 413,
+    "y": 1160
+   },
+   "powerTextStyle": {
+    "size": 35.43,
+    "font": "BaarSophiaBold",
+    "color": "#000000"
+   }
+  }
+ }
+}

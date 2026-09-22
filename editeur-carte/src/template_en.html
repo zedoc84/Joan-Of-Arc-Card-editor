@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JOA Card Editor</title>
+<style>
+/*__FONTS__*/
+:root{
+  --bg:#14110d; --panel:#1e1a14; --panel2:#272117; --line:#3b3226;
+  --gold:#c9a349; --gold2:#e8cd85; --txt:#e9e2d3; --dim:#a09582;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--txt);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+#app{display:flex;height:100vh;overflow:hidden}
+
+/* ---------------- panneau ---------------- */
+#side{width:390px;flex:0 0 390px;background:var(--panel);border-right:1px solid var(--line);
+  display:flex;flex-direction:column}
+#side header{padding:14px 16px;border-bottom:1px solid var(--line)}
+#side h1{margin:0;font:600 16px/1.2 "Belwe-Condensed",Georgia,serif;letter-spacing:.5px;color:var(--gold2)}
+#side h1 span{display:block;font:400 11px/1.5 system-ui;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+#side .legal{margin:8px 0 0;font-size:10.5px;line-height:1.45;color:var(--dim);border-top:1px solid var(--line);padding-top:8px}
+#scroll{flex:1;overflow-y:auto;padding:6px 16px 30px}
+#side footer{padding:12px 16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px}
+
+.sec{border-top:1px solid var(--line);margin-top:10px;padding-top:4px}
+.sec:first-child{border-top:0}
+.sec>summary{cursor:pointer;padding:8px 0;font:600 12px/1 system-ui;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--gold);list-style:none;display:flex;align-items:center;gap:6px}
+.sec>summary::-webkit-details-marker{display:none}
+.sec>summary::before{content:"\25B8";transition:transform .15s;color:var(--dim)}
+.sec[open]>summary::before{transform:rotate(90deg)}
+.sec .body{padding:2px 0 12px}
+
+label.f{display:block;margin:9px 0 3px;font-size:11px;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--dim)}
+input[type=text],input[type=number],select,textarea{width:100%;background:var(--panel2);
+  color:var(--txt);border:1px solid var(--line);border-radius:5px;padding:7px 9px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.row{display:flex;gap:8px;align-items:center}
+.row>*{flex:1}
+.row .nogrow{flex:0 0 auto}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chip{border:1px solid var(--line);background:var(--panel2);color:var(--txt);border-radius:5px;
+  padding:6px 10px;font-size:12px;cursor:pointer}
+.chip:hover{border-color:var(--gold)}
+.chip.on{background:var(--gold);border-color:var(--gold);color:#1a1509;font-weight:600}
+
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--txt);border-radius:6px;
+  padding:8px 12px;font:inherit;cursor:pointer}
+.btn:hover{border-color:var(--gold)}
+.btn.pri{background:var(--gold);border-color:var(--gold);color:#1a1509;font-weight:600}
+.btn.sm{padding:4px 8px;font-size:12px}
+.btn.dgr:hover{border-color:#c05a4a;color:#f0a99c}
+
+.dice{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.dice .d{display:flex;flex-direction:column;align-items:center;gap:3px}
+.dice .sw{width:18px;height:26px;border-radius:4px;border:2px solid var(--line);cursor:pointer}
+.dice .sw.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,163,73,.3)}
+.dice small{font-size:10px;color:var(--dim)}
+
+.pal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}
+.pal button{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:5px 3px;
+  cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--dim);font-size:9px}
+.pal button:hover{border-color:var(--gold);color:var(--txt)}
+.pal img{width:100%;height:38px;object-fit:contain;pointer-events:none}
+.palgrp{margin-top:10px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+
+#stack{margin-top:8px;display:flex;flex-direction:column;gap:4px}
+#stack .it{display:flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);
+  border-radius:5px;padding:4px 6px;font-size:12px;cursor:pointer}
+#stack .it.on{border-color:var(--gold)}
+#stack .it img{width:24px;height:24px;object-fit:contain}
+#stack .it .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint{font-size:11px;color:var(--dim);margin-top:6px;line-height:1.5}
+kbd{background:var(--panel2);border:1px solid var(--line);border-radius:3px;padding:0 4px;font-size:10px}
+
+/* ---------------- scene ---------------- */
+#scene{flex:1;position:relative;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 40%,#241f18,#100e0a 70%);overflow:auto;padding:24px}
+#wrap{position:relative;box-shadow:0 18px 60px rgba(0,0,0,.65);border-radius:6px}
+#cv{display:block;border-radius:6px;cursor:grab;touch-action:none}
+#cv.drag{cursor:grabbing}
+#hud{position:absolute;left:16px;bottom:14px;display:flex;gap:8px;align-items:center;
+  background:rgba(20,17,13,.85);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:12px}
+#toast{position:absolute;top:16px;left:50%;transform:translateX(-50%);background:var(--gold);
+  color:#1a1509;font-weight:600;padding:7px 16px;border-radius:20px;opacity:0;
+  transition:opacity .25s;pointer-events:none;font-size:12px}
+#toast.on{opacity:1}
+#scroll::-webkit-scrollbar{width:9px}
+#scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:5px}
+@media (max-width:900px){#app{flex-direction:column}#side{width:100%;flex:0 0 46vh}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="side">
+    <header>
+      <h1>JOA Card Editor<span>Unit &amp; Tarot — 100 % offline</span></h1>
+      <p class="legal">Images, icons and generated cards are for personal, non-commercial use only. Any sale or use for profit is prohibited.</p>
+    </header>
+    <div id="scroll">
+
+      <details class="sec" open><summary>Template &amp; artwork</summary><div class="body">
+        <label class="f">Card type</label>
+        <div class="chips" id="tplChips"></div>
+        <label class="f">Background artwork</label>
+        <div class="row">
+          <button class="btn" id="btnPic">Choose an image…</button>
+          <button class="btn nogrow dgr" id="btnPicDel" title="Remove">&#10005;</button>
+        </div>
+        <input type="file" id="filePic" accept="image/*" hidden>
+        <label class="f">Artwork zoom <b id="zoomVal">100 %</b></label>
+        <input type="range" id="picZoom" min="5" max="400" value="100">
+        <label class="f">Rotation <b id="rotVal">0°</b></label>
+        <input type="range" id="picRot" min="-180" max="180" value="0">
+        <div class="row" style="margin-top:8px">
+          <button class="btn sm" id="btnFit">Fit</button>
+          <button class="btn sm" id="btnFill">Fill</button>
+          <button class="btn sm" id="btnCenter">Centre</button>
+        </div>
+        <div class="hint">Drag on the card to move the artwork; scroll to zoom.</div>
+      </div></details>
+
+      <details class="sec" open><summary>Identity</summary><div class="body" id="texts"></div></details>
+
+      <details class="sec" open><summary>Faction</summary><div class="body">
+        <div class="chips" id="facChips"></div>
+      </div></details>
+
+      <details class="sec" open><summary>Unit type</summary><div class="body">
+        <div class="chips" id="typChips"></div>
+      </div></details>
+
+      <details class="sec" open><summary>Attack</summary><div class="body">
+        <label class="f">Mode</label>
+        <div class="chips" id="atkModes"></div>
+        <label class="f">Number of dice <b id="atkN">1</b></label>
+        <input type="range" id="atkCount" min="0" max="5" value="1">
+        <div class="dice" id="atkDice"></div>
+      </div></details>
+
+      <details class="sec" open><summary>Defence</summary><div class="body">
+        <label class="f"><input type="checkbox" id="defIcon" checked style="width:auto;vertical-align:-1px"> Show shield icon</label>
+        <label class="f">Number of dice <b id="defN">1</b></label>
+        <input type="range" id="defCount" min="0" max="5" value="1">
+        <div class="dice" id="defDice"></div>
+      </div></details>
+
+      <details class="sec" id="secLevel"><summary>Level / Stars</summary><div class="body">
+        <label class="f"><input type="checkbox" id="lvlOn" checked style="width:auto;vertical-align:-1px"> Show level crest</label>
+        <label class="f">Stars</label>
+        <div class="chips" id="lvlStars"></div>
+      </div></details>
+
+      <details class="sec" id="secExtras"><summary>Health &amp; command</summary><div class="body">
+        <label class="f"><input type="checkbox" id="hitOn" checked style="width:auto;vertical-align:-1px"> Hit-point crest</label>
+        <label class="f"><input type="checkbox" id="cmdOn" checked style="width:auto;vertical-align:-1px"> Command crest</label>
+        <label class="f"><input type="checkbox" id="linesOn" style="width:auto;vertical-align:-1px"> Separator lines (powers)</label>
+      </div></details>
+
+      <details class="sec" open><summary>Powers</summary><div class="body">
+        <div class="row">
+          <button class="btn sm" id="addText">+ Free text</button>
+          <button class="btn sm dgr" id="clrPow">Clear all</button>
+        </div>
+        <div id="palette"></div>
+        <label class="f">Placed elements</label>
+        <div id="stack"></div>
+        <div id="selBox" hidden>
+          <div id="selScaleRow">
+            <label class="f">Size <b id="selScaleV">100 %</b></label>
+            <input type="range" id="selScale" min="10" max="400" value="100">
+          </div>
+          <label class="f">Rotation <b id="selRotV">0°</b></label>
+          <input type="range" id="selRot" min="-180" max="180" value="0">
+          <div id="selTextBox" hidden>
+            <label class="f">Text</label>
+            <input type="text" id="selText">
+            <div class="row">
+              <div><label class="f">Font size</label><input type="number" id="selFs" min="6" max="200" step="1"></div>
+              <div><label class="f">Colour</label><input type="text" id="selColor"></div>
+            </div>
+          </div>
+          <div class="row" style="margin-top:8px">
+            <button class="btn sm" id="selUp">&#9650; Forward</button>
+            <button class="btn sm" id="selDown">&#9660; Back</button>
+            <button class="btn sm dgr" id="selDel">Delete</button>
+          </div>
+        </div>
+        <div class="hint">Click a symbol to add it, then drag it onto the card.
+          Scroll = resize the selected element. <kbd>Del</kbd> to remove it, arrow keys to nudge it pixel by pixel.</div>
+      </div></details>
+
+    </div>
+    <footer>
+      <button class="btn pri" id="btnPng">Export as PNG</button>
+      <select id="expScale" style="flex:0 0 88px"><option value="1">&times;1</option><option value="2">&times;2</option><option value="3">&times;3</option></select>
+      <button class="btn" id="btnSave">Save</button>
+      <button class="btn" id="btnLoad">Open</button>
+      <input type="file" id="fileLoad" accept="application/json,.json" hidden>
+    </footer>
+  </div>
+
+  <div id="scene">
+    <div id="wrap"><canvas id="cv"></canvas></div>
+    <div id="hud">
+      <span id="dims">—</span>
+      <button class="btn sm" id="zOut">&minus;</button><span id="zLbl">100%</span><button class="btn sm" id="zIn">+</button>
+      <button class="btn sm" id="zFit">Fit</button>
+    </div>
+    <div id="toast"></div>
+  </div>
+</div>
+
+<script>
+const ASSETS = /*__ASSETS__*/{};
+const CONFIG = /*__CONFIG__*/{};
+const FONTDATA = /*__FONTDATA__*/{};
+
+/* ============================================================ chargement */
+const IMG = {};
+function loadImg(src){
+  return new Promise(res=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=()=>res(null); i.src=ASSETS[src]||src; });
+}
+async function loadAll(){
+  await Promise.all(Object.keys(ASSETS).map(async k=>{ IMG[k]=await loadImg(k); }));
+  for(const name in FONTDATA){
+    try{ const f=new FontFace(name,'url('+FONTDATA[name]+')'); await f.load(); document.fonts.add(f); }catch(e){}
+  }
+  try{ await document.fonts.ready; }catch(e){}
+}
+
+/* ============================================================ état */
+function blankState(key){
+  const T=CONFIG.templates[key];
+  const texts={}; for(const k in T.texts) texts[k]=T.texts[k].value;
+  return {
+    faction:T.faction[0].id, unitType:T.unitType[0].id,
+    attackMode:T.attack.modes[0].id,
+    atk:['noir'], def:['blanc'], defIcon:true,
+    level:1, levelOn:true, hitOn:true, cmdOn:true, linesOn:false,
+    texts:texts, powers:[],
+    pic:null, picX:0, picY:0, picScale:1, picRot:0
+  };
+}
+const S={ tpl:'unite', view:1, sel:-1, byTpl:{} };
+for(const k in CONFIG.templates) S.byTpl[k]=blankState(k);
+const st=()=>S.byTpl[S.tpl];
+const T =()=>CONFIG.templates[S.tpl];
+
+/* ============================================================ rendu */
+const cv=document.getElementById('cv'), ctx=cv.getContext('2d');
+
+function drawLayer(c,l){
+  if(!l) return; const im=IMG[l.src]; if(!im) return;
+  c.drawImage(im,l.x,l.y,l.w,l.h);
+}
+function findOpt(list,id){ return list.find(o=>o.id===id)||list[0]; }
+
+function drawText(c,style,value){
+  if(value==null||value==='') return;
+  c.save();
+  c.fillStyle=style.color; c.textBaseline='alphabetic'; c.textAlign='left';
+  let fs=style.size;
+  c.font=fs+'px "'+style.font+'", Georgia, serif';
+  const max=style.maxWidth||1e9;
+  let w=c.measureText(value).width;
+  if(w>max){ fs=Math.max(6,fs*max/w); c.font=fs+'px "'+style.font+'", Georgia, serif'; w=c.measureText(value).width; }
+  const x=style.align==='left'?style.cx:style.cx-w/2;
+  c.fillText(value,x,style.baseline);
+  c.restore();
+}
+
+function diceStack(c,cfg,colors){
+  const n=colors.length; if(n<1) return;
+  const idx=Math.min(n,cfg.supports.length)-1;
+  drawLayer(c,cfg.supports[idx]);
+  const sock=cfg.socketsByCount[idx]||cfg.socketsByCount[cfg.socketsByCount.length-1];
+  const ref=cfg.refSocket;
+  for(let i=0;i<n&&i<sock.length;i++){
+    const d=cfg.dice[colors[i]]; if(!d) continue;
+    const im=IMG[d.src]; if(!im) continue;
+    c.drawImage(im, sock[i][0]+(d.x-ref[0]), sock[i][1]+(d.y-ref[1]), d.w, d.h);
+  }
+}
+
+function drawPic(c){
+  const s=st(); if(!s.picImg) return;
+  const im=s.picImg;
+  c.save();
+  c.translate(s.picX,s.picY); c.rotate(s.picRot*Math.PI/180); c.scale(s.picScale,s.picScale);
+  c.drawImage(im,-im.width/2,-im.height/2);
+  c.restore();
+}
+
+function selRect(c,x,y,w,h){
+  c.save(); c.strokeStyle='#e8cd85'; c.lineWidth=2; c.setLineDash([7,5]);
+  c.strokeRect(x,y,w,h); c.setLineDash([]);
+  c.fillStyle='#e8cd85'; c.fillRect(x+w-5,y+h-5,10,10);
+  c.restore();
+}
+
+function drawPowers(c,forExport){
+  const s=st(), t=T();
+  s.powers.forEach((p,i)=>{
+    c.save();
+    c.translate(p.x,p.y); c.rotate((p.rot||0)*Math.PI/180);
+    if(p.type==='text'){
+      const stl=t.powerTextStyle;
+      c.fillStyle=p.color||stl.color; c.textAlign='center'; c.textBaseline='middle';
+      c.font=(p.size||stl.size)+'px "'+(p.font||stl.font)+'", Georgia, serif';
+      c.fillText(p.text||'',0,0);
+      if(!forExport&&S.sel===i){
+        const w=c.measureText(p.text||'').width, h=(p.size||stl.size);
+        selRect(c,-w/2-6,-h*0.75,w+12,h*1.5);
+      }
+    }else{
+      const im=IMG[p.src];
+      if(im){
+        const w=p.w*p.scale, h=p.h*p.scale;
+        c.drawImage(im,-w/2,-h/2,w,h);
+        if(!forExport&&S.sel===i) selRect(c,-w/2-4,-h/2-4,w+8,h+8);
+      }
+    }
+    c.restore();
+  });
+}
+
+function render(target,scale,forExport){
+  const t=T(), s=st();
+  const c=target||ctx, k=scale||1;
+  c.setTransform(1,0,0,1,0,0);
+  c.clearRect(0,0,t.w*k,t.h*k);
+  c.save(); if(k!==1) c.scale(k,k);
+  c.beginPath(); c.rect(0,0,t.w,t.h); c.clip();
+
+  drawPic(c);
+  drawLayer(c,t.frame);
+  drawText(c,t.texts.name,s.texts.name);
+
+  const order = (S.tpl==='unite')
+    ? ['skill','powers','defense','attack','faction','type']
+    : ['defense','attack','hit','type','powers','command','skill','level','faction'];
+
+  for(let q=0;q<order.length;q++){
+    const step=order[q];
+    if(step==='skill'){
+      drawLayer(c,t.skillBand);
+      drawText(c,t.texts.skill,s.texts.skill);
+    }
+    else if(step==='powers'){
+      if(s.linesOn&&t.lines) t.lines.forEach(l=>drawLayer(c,l));
+      drawPowers(c,forExport);
+    }
+    else if(step==='defense'){
+      diceStack(c,t.defense,s.def);
+      if(s.defIcon) drawLayer(c,t.defense.icon);
+    }
+    else if(step==='attack'){
+      diceStack(c,t.attack,s.atk);
+      drawLayer(c,findOpt(t.attack.modes,s.attackMode).layer);
+      const rt=t.texts.range;
+      if(rt){ const cond=rt.onlyWhen; if(!cond||cond.in.indexOf(s[cond.field])>=0) drawText(c,rt,s.texts.range); }
+    }
+    else if(step==='faction') drawLayer(c,findOpt(t.faction,s.faction).layer);
+    else if(step==='type')    drawLayer(c,findOpt(t.unitType,s.unitType).layer);
+    else if(step==='hit'&&t.hit&&s.hitOn){ drawLayer(c,t.hit.support); drawText(c,t.texts.hit,s.texts.hit); }
+    else if(step==='command'&&t.command&&s.cmdOn){ drawLayer(c,t.command.support);
+      drawText(c,t.texts.command,s.texts.command); drawText(c,t.texts.command2,s.texts.command2); }
+    else if(step==='level'&&t.level&&s.levelOn){
+      drawLayer(c,t.level.support); drawLayer(c,t.level.arrow);
+      drawLayer(c,t.level.stars[Math.max(0,Math.min(2,s.level-1))]);
+      drawText(c,t.texts.level,s.texts.level); }
+  }
+  c.restore();
+}
+
+function fitView(){
+  const t=T(), sc=document.getElementById('scene');
+  S.view=Math.max(.1,Math.min((sc.clientWidth-56)/t.w,(sc.clientHeight-56)/t.h,1.6));
+  applyView();
+}
+function applyView(){
+  const t=T();
+  if(cv.width!==t.w||cv.height!==t.h){ cv.width=t.w; cv.height=t.h; }
+  cv.style.width=(t.w*S.view)+'px'; cv.style.height=(t.h*S.view)+'px';
+  document.getElementById('zLbl').textContent=Math.round(S.view*100)+'%';
+  document.getElementById('dims').textContent=t.w+' × '+t.h+' px';
+  render();
+}
+
+/* ============================================================ interface */
+const $=id=>document.getElementById(id);
+function chips(host,list,cur,cb){
+  host.innerHTML='';
+  list.forEach(o=>{
+    const b=document.createElement('button');
+    b.className='chip'+(o.id===cur?' on':''); b.textContent=o.label;
+    b.onclick=()=>cb(o.id);
+    host.appendChild(b);
+  });
+}
+const DIECOL={noir:'#22201d',blanc:'#efe9dd',rouge:'#a8322a',jaune:'#d8a72b',violet:'#6b4a94'};
+function diceUI(host,cfg,arr,onchange){
+  host.innerHTML='';
+  arr.forEach((col,i)=>{
+    const d=document.createElement('div'); d.className='d';
+    const line=document.createElement('div'); line.style.display='flex'; line.style.gap='2px';
+    Object.keys(cfg.dice).forEach(k=>{
+      const b=document.createElement('div');
+      b.className='sw'+(k===col?' on':''); b.style.background=DIECOL[k]||'#666'; b.title=({noir:'Black',blanc:'White',rouge:'Red',jaune:'Yellow',violet:'Purple'})[k]||k;
+      b.onclick=()=>{ arr[i]=k; onchange(); };
+      line.appendChild(b);
+    });
+    const lb=document.createElement('small'); lb.textContent='Die '+(i+1);
+    d.appendChild(line); d.appendChild(lb); host.appendChild(d);
+  });
+}
+
+function buildTexts(){
+  const t=T(), s=st(), host=$('texts'); host.innerHTML='';
+  const keys=Object.keys(t.texts);
+  keys.forEach(k=>{
+    const def=t.texts[k];
+    const lab=document.createElement('label'); lab.className='f'; lab.textContent=def.label;
+    const inp=document.createElement('input'); inp.type='text'; inp.value=s.texts[k]||'';
+    inp.oninput=()=>{ s.texts[k]=inp.value; render(); };
+    host.appendChild(lab); host.appendChild(inp);
+  });
+}
+
+function buildPalette(){
+  const t=T(), host=$('palette'); host.innerHTML='';
+  t.palette.forEach(g=>{
+    const h=document.createElement('div'); h.className='palgrp'; h.textContent=g.group; host.appendChild(h);
+    const grid=document.createElement('div'); grid.className='pal';
+    g.items.forEach(it=>{
+      const b=document.createElement('button'); b.title=it.label;
+      const im=document.createElement('img'); im.src=ASSETS[it.src]||'';
+      const sp=document.createElement('span'); sp.textContent=it.label;
+      b.appendChild(im); b.appendChild(sp);
+      b.onclick=()=>addPower(it);
+      grid.appendChild(b);
+    });
+    host.appendChild(grid);
+  });
+}
+
+function addPower(it){
+  const s=st(), d=T().powersDefault;
+  s.powers.push({type:'img',src:it.src,label:it.label,w:it.w,h:it.h,
+    x:d.x+(Math.random()*40-20),y:d.y+(Math.random()*30-15),scale:1,rot:0});
+  S.sel=s.powers.length-1; syncStack(); render(); toast(it.label+' added');
+}
+$('addText').onclick=()=>{
+  const s=st(), d=T().powersDefault, stl=T().powerTextStyle;
+  s.powers.push({type:'text',text:'Text',x:d.x,y:d.y-70,scale:1,rot:0,size:stl.size,color:stl.color,font:stl.font});
+  S.sel=s.powers.length-1; syncStack(); render();
+};
+$('clrPow').onclick=()=>{ st().powers=[]; S.sel=-1; syncStack(); render(); };
+
+function syncStack(){
+  const s=st(), host=$('stack'); host.innerHTML='';
+  s.powers.forEach((p,i)=>{
+    const d=document.createElement('div'); d.className='it'+(S.sel===i?' on':'');
+    if(p.type==='img'){ const im=document.createElement('img'); im.src=ASSETS[p.src]||''; d.appendChild(im); }
+    else{ const sp=document.createElement('span'); sp.textContent='T'; sp.style.width='24px';
+          sp.style.textAlign='center'; sp.style.color='var(--gold)'; d.appendChild(sp); }
+    const n=document.createElement('span'); n.className='nm';
+    n.textContent=(p.type==='text')?('\u201C'+(p.text||'')+'\u201D'):p.label; d.appendChild(n);
+    d.onclick=()=>{ S.sel=i; syncStack(); render(); };
+    host.appendChild(d);
+  });
+  syncSel();
+}
+function syncSel(){
+  const p=st().powers[S.sel];
+  $('selBox').hidden=!p;
+  if(!p) return;
+  $('selScale').value=Math.round((p.scale||1)*100); $('selScaleV').textContent=Math.round((p.scale||1)*100)+' %';
+  $('selRot').value=p.rot||0; $('selRotV').textContent=(p.rot||0)+'°';
+  $('selTextBox').hidden=(p.type!=='text');
+  $('selScaleRow').hidden=(p.type==='text');
+  if(p.type==='text'){ $('selText').value=p.text||''; $('selFs').value=Math.round(p.size); $('selColor').value=p.color; }
+}
+$('selScale').oninput=e=>{const p=st().powers[S.sel];if(!p)return;p.scale=+e.target.value/100;
+  $('selScaleV').textContent=e.target.value+' %';render();};
+$('selRot').oninput=e=>{const p=st().powers[S.sel];if(!p)return;p.rot=+e.target.value;
+  $('selRotV').textContent=e.target.value+'°';render();};
+$('selText').oninput=e=>{const p=st().powers[S.sel];if(!p)return;p.text=e.target.value;syncStack();render();};
+$('selFs').oninput=e=>{const p=st().powers[S.sel];if(!p)return;p.size=+e.target.value;render();};
+$('selColor').oninput=e=>{const p=st().powers[S.sel];if(!p)return;p.color=e.target.value;render();};
+$('selDel').onclick=()=>{const s=st();if(S.sel<0)return;s.powers.splice(S.sel,1);S.sel=-1;syncStack();render();};
+$('selUp').onclick=()=>{const s=st();if(S.sel<0||S.sel>=s.powers.length-1)return;
+  const p=s.powers.splice(S.sel,1)[0];s.powers.splice(S.sel+1,0,p);S.sel++;syncStack();render();};
+$('selDown').onclick=()=>{const s=st();if(S.sel<1)return;
+  const p=s.powers.splice(S.sel,1)[0];s.powers.splice(S.sel-1,0,p);S.sel--;syncStack();render();};
+
+function buildAll(){
+  const t=T(), s=st();
+  chips($('tplChips'),Object.keys(CONFIG.templates).map(k=>({id:k,label:CONFIG.templates[k].label})),
+        S.tpl,id=>{ S.tpl=id; S.sel=-1; buildAll(); fitView(); });
+  chips($('facChips'),t.faction,s.faction,id=>{s.faction=id;buildAll();render();});
+  chips($('typChips'),t.unitType,s.unitType,id=>{s.unitType=id;buildAll();render();});
+  chips($('atkModes'),t.attack.modes,s.attackMode,id=>{s.attackMode=id;buildAll();render();});
+
+  $('atkCount').max=t.attack.maxDice; $('defCount').max=t.defense.maxDice;
+  if(s.atk.length>t.attack.maxDice) s.atk.length=t.attack.maxDice;
+  if(s.def.length>t.defense.maxDice) s.def.length=t.defense.maxDice;
+  $('atkCount').value=s.atk.length; $('atkN').textContent=s.atk.length;
+  $('defCount').value=s.def.length; $('defN').textContent=s.def.length;
+  diceUI($('atkDice'),t.attack,s.atk,()=>{buildAll();render();});
+  diceUI($('defDice'),t.defense,s.def,()=>{buildAll();render();});
+  $('defIcon').checked=s.defIcon;
+
+  $('secLevel').hidden=!t.level;
+  $('secExtras').hidden=!(t.hit||t.command||t.lines);
+  if(t.level){
+    chips($('lvlStars'),[{id:1,label:'★'},{id:2,label:'★★'},{id:3,label:'★★★'}],s.level,
+      id=>{s.level=+id;buildAll();render();});
+    $('lvlOn').checked=s.levelOn;
+  }
+  $('hitOn').checked=s.hitOn; $('cmdOn').checked=s.cmdOn; $('linesOn').checked=s.linesOn;
+  $('picZoom').value=Math.round(s.picScale*100); $('zoomVal').textContent=Math.round(s.picScale*100)+' %';
+  $('picRot').value=s.picRot; $('rotVal').textContent=s.picRot+'°';
+
+  buildTexts(); buildPalette(); syncStack();
+}
+
+$('atkCount').oninput=e=>{const s=st(),n=+e.target.value;
+  while(s.atk.length<n)s.atk.push(s.atk[s.atk.length-1]||'noir');
+  s.atk.length=n; $('atkN').textContent=n;
+  diceUI($('atkDice'),T().attack,s.atk,()=>{buildAll();render();}); render();};
+$('defCount').oninput=e=>{const s=st(),n=+e.target.value;
+  while(s.def.length<n)s.def.push(s.def[s.def.length-1]||'blanc');
+  s.def.length=n; $('defN').textContent=n;
+  diceUI($('defDice'),T().defense,s.def,()=>{buildAll();render();}); render();};
+$('defIcon').onchange=e=>{st().defIcon=e.target.checked;render();};
+$('lvlOn').onchange=e=>{st().levelOn=e.target.checked;render();};
+$('hitOn').onchange=e=>{st().hitOn=e.target.checked;render();};
+$('cmdOn').onchange=e=>{st().cmdOn=e.target.checked;render();};
+$('linesOn').onchange=e=>{st().linesOn=e.target.checked;render();};
+
+/* ---------------- image de fond ---------------- */
+$('btnPic').onclick=()=>$('filePic').click();
+$('filePic').onchange=e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ const s=st(); s.pic=r.result;
+    const im=new Image(); im.onload=()=>{ s.picImg=im; fitPic('fill'); buildAll(); render(); };
+    im.src=r.result; };
+  r.readAsDataURL(f); e.target.value='';
+};
+$('btnPicDel').onclick=()=>{const s=st();s.pic=null;s.picImg=null;render();};
+function fitPic(mode){
+  const s=st(),t=T(); if(!s.picImg) return;
+  const k=(mode==='fill')?Math.max(t.w/s.picImg.width,t.h/s.picImg.height)
+                         :Math.min(t.w/s.picImg.width,t.h/s.picImg.height);
+  s.picScale=k; s.picX=t.w/2; s.picY=t.h/2; s.picRot=0;
+}
+$('btnFit').onclick=()=>{fitPic('fit');buildAll();render();};
+$('btnFill').onclick=()=>{fitPic('fill');buildAll();render();};
+$('btnCenter').onclick=()=>{const s=st(),t=T();s.picX=t.w/2;s.picY=t.h/2;render();};
+$('picZoom').oninput=e=>{st().picScale=+e.target.value/100;$('zoomVal').textContent=e.target.value+' %';render();};
+$('picRot').oninput=e=>{st().picRot=+e.target.value;$('rotVal').textContent=e.target.value+'°';render();};
+
+/* ---------------- souris sur le canvas ---------------- */
+function toCard(ev){
+  const r=cv.getBoundingClientRect();
+  return {x:(ev.clientX-r.left)/S.view, y:(ev.clientY-r.top)/S.view};
+}
+function boxOf(p){
+  if(p.type==='text'){ ctx.font=(p.size)+'px "'+p.font+'", serif';
+    return {w:ctx.measureText(p.text||'').width+14,h:p.size*1.5}; }
+  return {w:p.w*p.scale,h:p.h*p.scale};
+}
+function hit(pt){
+  const s=st();
+  for(let i=s.powers.length-1;i>=0;i--){
+    const p=s.powers[i], a=-(p.rot||0)*Math.PI/180;
+    const dx=pt.x-p.x, dy=pt.y-p.y;
+    const lx=dx*Math.cos(a)-dy*Math.sin(a), ly=dx*Math.sin(a)+dy*Math.cos(a);
+    const b=boxOf(p);
+    if(Math.abs(lx)<=b.w/2+5&&Math.abs(ly)<=b.h/2+5) return i;
+  }
+  return -1;
+}
+let drag=null;
+cv.addEventListener('pointerdown',e=>{
+  cv.setPointerCapture(e.pointerId);
+  const pt=toCard(e), i=hit(pt), s=st();
+  if(i>=0){
+    S.sel=i; syncStack();
+    const p=s.powers[i], b=boxOf(p);
+    const corner=(p.type!=='text')&&Math.abs(pt.x-(p.x+b.w/2))<14&&Math.abs(pt.y-(p.y+b.h/2))<14;
+    drag={mode:corner?'scale':'move',i:i,ox:pt.x-p.x,oy:pt.y-p.y,
+          s0:p.scale,d0:Math.max(1,Math.hypot(pt.x-p.x,pt.y-p.y))};
+  }else{
+    S.sel=-1; syncStack();
+    drag={mode:'pic',ox:pt.x-s.picX,oy:pt.y-s.picY};
+  }
+  cv.classList.add('drag'); render();
+});
+cv.addEventListener('pointermove',e=>{
+  if(!drag) return;
+  const pt=toCard(e), s=st();
+  if(drag.mode==='pic'){ if(s.picImg){ s.picX=pt.x-drag.ox; s.picY=pt.y-drag.oy; render(); } return; }
+  const p=s.powers[drag.i]; if(!p) return;
+  if(drag.mode==='move'){ p.x=pt.x-drag.ox; p.y=pt.y-drag.oy; }
+  else { p.scale=Math.max(.05,drag.s0*Math.hypot(pt.x-p.x,pt.y-p.y)/drag.d0); syncSel(); }
+  render();
+});
+function endDrag(){ drag=null; cv.classList.remove('drag'); }
+cv.addEventListener('pointerup',endDrag);
+cv.addEventListener('pointercancel',endDrag);
+cv.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const s=st(), k=(e.deltaY<0)?1.06:1/1.06, p=s.powers[S.sel];
+  if(p&&p.type==='text'){ p.size=Math.max(6,Math.min(240,p.size*k)); syncSel(); }
+  else if(p){ p.scale=Math.max(.05,Math.min(8,(p.scale||1)*k)); syncSel(); }
+  else if(s.picImg){ s.picScale=Math.max(.02,Math.min(12,s.picScale*k));
+    $('picZoom').value=Math.round(s.picScale*100); $('zoomVal').textContent=Math.round(s.picScale*100)+' %'; }
+  render();
+},{passive:false});
+
+document.addEventListener('keydown',e=>{
+  if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  const s=st(), p=s.powers[S.sel];
+  if((e.key==='Delete'||e.key==='Backspace')&&p){ s.powers.splice(S.sel,1);S.sel=-1;syncStack();render();e.preventDefault();return; }
+  const step=e.shiftKey?10:1;
+  const mv={ArrowLeft:[-step,0],ArrowRight:[step,0],ArrowUp:[0,-step],ArrowDown:[0,step]}[e.key];
+  if(mv){ e.preventDefault();
+    if(p){ p.x+=mv[0]; p.y+=mv[1]; } else if(s.picImg){ s.picX+=mv[0]; s.picY+=mv[1]; }
+    render(); }
+});
+
+/* ---------------- zoom vue ---------------- */
+$('zIn').onclick=()=>{S.view=Math.min(3,S.view*1.15);applyView();};
+$('zOut').onclick=()=>{S.view=Math.max(.1,S.view/1.15);applyView();};
+$('zFit').onclick=fitView;
+let rz; window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(fitView,120);});
+
+/* ---------------- export / sauvegarde ---------------- */
+function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on');
+  clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('on'),1600); }
+
+$('btnPng').onclick=()=>{
+  const t=T(), k=+$('expScale').value;
+  const o=document.createElement('canvas'); o.width=t.w*k; o.height=t.h*k;
+  const oc=o.getContext('2d'); oc.imageSmoothingQuality='high';
+  const keep=S.sel; S.sel=-1;
+  render(oc,k,true);
+  S.sel=keep; render();
+  o.toBlob(b=>{
+    const a=document.createElement('a');
+    const nm=(st().texts.name||'card').replace(/[^\w\-À-ÿ ]+/g,'').trim()||'card';
+    a.download=nm+' - '+t.label+(k>1?' x'+k:'')+'.png';
+    a.href=URL.createObjectURL(b); a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),5000);
+  },'image/png');
+  toast('PNG exported');
+};
+$('btnSave').onclick=()=>{
+  const data={v:1,tpl:S.tpl,byTpl:{}};
+  for(const k in S.byTpl){ const c=Object.assign({},S.byTpl[k]); delete c.picImg; data.byTpl[k]=c; }
+  const b=new Blob([JSON.stringify(data)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.download=((st().texts.name||'card')+'.joa.json'); a.href=URL.createObjectURL(b); a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),5000); toast('Saved');
+};
+$('btnLoad').onclick=()=>$('fileLoad').click();
+$('fileLoad').onchange=e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=async()=>{
+    try{
+      const d=JSON.parse(r.result);
+      for(const k in d.byTpl) if(S.byTpl[k]) S.byTpl[k]=Object.assign(blankState(k),d.byTpl[k]);
+      if(d.tpl&&S.byTpl[d.tpl]) S.tpl=d.tpl;
+      S.sel=-1;
+      for(const k in S.byTpl){ const s=S.byTpl[k];
+        if(s.pic) s.picImg=await new Promise(res=>{const i=new Image();i.onload=()=>res(i);i.onerror=()=>res(null);i.src=s.pic;});
+      }
+      buildAll(); fitView(); toast('Loaded');
+    }catch(err){ alert('Unreadable file'); }
+  };
+  r.readAsText(f); e.target.value='';
+};
+
+/* ---------------- démarrage ---------------- */
+loadAll().then(()=>{ buildAll(); fitView(); });
+</script>
+</body>
+</html>
